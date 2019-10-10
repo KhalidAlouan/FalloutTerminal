@@ -33,14 +33,14 @@
 
 		$volcado = "";
 
-		$i = 1;
-		for ($i; $i<=354;$i++){
+		$i = 0;
+		for ($i; $i<=12;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 			
 		}
-		$volcado = $volcado . $primera . $segunda . $terc . $cuarta . $quinta . $sexta;
-		$volcado=str_replace(' ','',$volcado);
-		echo $volcado;
+		
+		$volcado=preg_replace('/\s+/','',$volcado);
+		echo $volcado.$array[array_rand($array,1)];
 		
 		echo "</div>";
 		echo "</div>";
