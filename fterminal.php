@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+
 	<title>Fallout Terminal</title>
 	<meta charset="utf-8">
 	<style type="text/css" src=""></style>
 	<script type="text/javascript" src="fterminalJS.js"></script>
+    <link rel="stylesheet" type="text/css" href="terminal.css"> 
 </head>
 <body>
+	<div id="box1">
+	</div>	
 	<?php
+
 		$array= array();
 		$fp = fopen("paraules.txt", "r");
 		while (!feof($fp)){
@@ -28,8 +33,6 @@
 		echo $array[$randomPalabra[5]];
 		echo "</div>";
 
-
 	?>
-
 </body>
 </html>

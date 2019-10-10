@@ -1,0 +1,16 @@
+body {
+	background-image: url("terminal.jpg");
+	background-size: cover;                      
+    background-repeat: no-repeat;
+   
+}
+
+#box1 {
+	height: 517px;
+ 	width: 682px;
+ 	background-color: black;
+ 	position: absolute;
+ 	left: 310px;
+ 	top: 110px;
+ 	border-radius: 50px;
+}
