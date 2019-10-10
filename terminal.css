@@ -13,4 +13,11 @@ body {
  	left: 310px;
  	top: 110px;
  	border-radius: 50px;
+ 	color: #088A08;
+}
+
+#box2 {
+	color: transparent;
+	padding: 40px;
+	color: #088A08;
 }
