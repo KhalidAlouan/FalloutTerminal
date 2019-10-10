@@ -18,5 +18,3 @@ mason
 alary
 derry
 capri
-
-
