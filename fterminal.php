@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <title>Hola Mundo!</title>
+    <title>Terminal</title>
     <link rel="stylesheet" type="text/css" href="terminal.css"> 
 </head>
 <body>
