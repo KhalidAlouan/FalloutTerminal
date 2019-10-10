@@ -9,6 +9,19 @@
 </head>
 <body>
 	<?php
+		//array ca
+		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+		$volcado = "";
+
+		$i = 1;
+
+		// Caracteres especiales de forma random
+		for ($i; $i<=354;$i++){
+			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
+			
+		}
+	
+
 		$array= array();
 		$fp = fopen("paraules.txt", "r");
 		while (!feof($fp)){
