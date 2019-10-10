@@ -22,14 +22,30 @@
 		$randomPalabra = array_rand($array, 6);
 		echo '<div id="box1">';
 		echo '<div id="box2">';
-		echo $array[$randomPalabra[0]];
-		echo $array[$randomPalabra[1]];
-		echo $array[$randomPalabra[2]];
-		echo $array[$randomPalabra[3]];
-		echo $array[$randomPalabra[4]];
-		echo $array[$randomPalabra[5]];
+		 $primera=$array[$randomPalabra[0]];
+		 $segunda=$array[$randomPalabra[1]];
+		 $terc=$array[$randomPalabra[2]];
+		 $cuarta=$array[$randomPalabra[3]];
+		 $quinta=$array[$randomPalabra[4]];
+		 $sexta=$array[$randomPalabra[5]];
+
+		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+
+		$volcado = "";
+
+		$i = 1;
+		for ($i; $i<=354;$i++){
+			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
+			
+		}
+		$volcado = $volcado . $primera . $segunda . $terc . $cuarta . $quinta . $sexta;
+		$volcado=str_replace(' ','',$volcado);
+		echo $volcado;
+		
 		echo "</div>";
 		echo "</div>";
+
+
 
 	?>
 </body>
