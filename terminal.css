@@ -17,7 +17,20 @@ body {
 }
 
 #box2 {
-	color: transparent;
+	background-color: transparent;
 	padding: 40px;
 	color: #088A08;
 }
+
+#table1 {
+	color: #088A08;
+}
+
+.column1 {
+	width: 4%;
+}
+
+.column2 {
+	width: 8%;
+}
+
