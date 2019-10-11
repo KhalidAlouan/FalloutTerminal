@@ -44,14 +44,14 @@
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
-
+		/*
 		echo $array[$randomPalabra[0]];
 		echo $array[$randomPalabra[1]];
 		echo $array[$randomPalabra[2]];
 		echo $array[$randomPalabra[3]];
 		echo $array[$randomPalabra[4]];
 		echo $array[$randomPalabra[5]];
-
+		*/
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
 									"0xF97C", "0xF988", "0xF994", "0xF9A0", "0xF9AC", "0xF9B8", "0xF9C4", "0xF9D0", "0xF9DC");
 
