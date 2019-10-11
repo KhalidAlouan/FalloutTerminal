@@ -108,19 +108,11 @@
 		echo '</table>';
 
 
-		$primera=$array[$randomPalabra[0]];
-		$segunda=$array[$randomPalabra[1]];
-		$terc=$array[$randomPalabra[2]];
-		$cuarta=$array[$randomPalabra[3]];
-		$quinta=$array[$randomPalabra[4]];
-		$sexta=$array[$randomPalabra[5]];
-
-
 		$volcado = $volcado;
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfiveth','wsixth');
 		$rand_pos = array('');
 		for ($i=0; $i < 6; $i++) { 
-			$random_position = rand(0,strlen($volcado)-1);
+			$random_position = rand(0,strlen($volcado));
 
 			if (in_array($random_position, $rand_pos)) {
 				$i = $i - 1;
