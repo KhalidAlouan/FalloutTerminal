@@ -69,22 +69,17 @@
 		$arrayDirecciones2 = array("0xF9E8", "0xF9F4", "0xFA00", "0xFAFC", "0xFA18", "0xFA24", "0xFA30", "0xFA3C", 
 									"0xFA48", "0xFA54", "0xFA60", "0xFA6C", "0xF978", "0xFA84", "0xFA90", "0xFA9C", "0xFAA8");
 
+		$attemptsLeft = 5;
+
+
+		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
+		echo '<h4>ENTER PASSWORD NOW</h4>'; 
+		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
+		echo '<progress id="progressBar"></progress></h4>';
+
 		// I create the table.
 		echo '<table id="table1">';
 		echo '<tbody>';
-
-		$attemptsLeft = 5;
-
-		echo '<tr colspan="4">ROBCO INDUSTRIES TM (TM) TERMLINK PROTOCOL</tr><br>';
-		echo '<tr colspan="4">ENTER PASSWORD NOW</tr>';
-
-		echo '<tr id="intents">';
-		echo '<th id="titolIntents">'; 
-		echo "$attemptsLeft ATTEMPT(S) LEFT: </th>";
-
-	
-		echo '<th id="barraProgres"><div id="progressbar"> <div> </div> </div></th>';
-		echo '</tr>';
 
 		// I create every row iterating.
 		for($i=0; $i < 17; $i++) {
@@ -94,10 +89,10 @@
 			$direction1 = $arrayDirecciones1[$i];
 			$direction2 = $arrayDirecciones2[$i];
 
-			echo '<th class="column1">';
+			echo '<th class="column1" align="left">';
 			echo "$direction1</th>";
 			echo '<th class="column2"></th>';
-			echo '<th class="column1">';
+			echo '<th class="column1" align="left">';
 			echo "$direction2</th>";
 			echo '<th class="column2"></th>';
 
@@ -126,12 +121,6 @@
 				
 			}
 		}
-			
-		
-
-
-		
-
 
 		$i = 1;
 		for ($i; $i<=12;$i++){
@@ -147,14 +136,6 @@
 		// 	}
 		// }		
 
-			
-
-
-
-
-		
-		
-
 		// $special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
 
 		// $volcado = "";
@@ -165,7 +146,6 @@
 			
 		// }
 		
-
 		$volcado=preg_replace('/\s+/','',$volcado);
 		// echo $volcado.$array[array_rand($array,1)];
 		echo $volcado;
@@ -173,9 +153,6 @@
 
 		echo "</div>";
 		echo "</div>";
-
-
-
 	?>
 
 </body>
