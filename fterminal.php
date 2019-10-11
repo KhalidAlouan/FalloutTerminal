@@ -51,6 +51,7 @@
 		echo $array[$randomPalabra[3]];
 		echo $array[$randomPalabra[4]];
 		echo $array[$randomPalabra[5]];
+		echo '<br>';
 
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
 									"0xF97C", "0xF988", "0xF994", "0xF9A0", "0xF9AC", "0xF9B8", "0xF9C4", "0xF9D0", "0xF9DC");
@@ -61,6 +62,16 @@
 		// I create the table.
 		echo '<table id="table1">';
 		echo '<tbody>';
+
+		$attemptsLeft = 5;
+
+		echo '<tr id="intents">';
+		echo '<th id="titolIntents">'; 
+		echo "$attemptsLeft ATTEMPT(S) LEFT: </th>";
+
+	
+		echo '<th id="barraProgres"><div id="progressbar"> <div> </div> </div></th>';
+		echo '</tr>';
 
 		// I create every row iterating.
 		for($i=0; $i < 17; $i++) {
@@ -95,7 +106,7 @@
 
 		$volcado = "";
 
-		$i = 0;
+		$i = 1;
 		for ($i; $i<=12;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 			

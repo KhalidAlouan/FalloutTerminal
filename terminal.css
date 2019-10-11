@@ -14,21 +14,22 @@ body {
  	position: absolute;
  	left: 310px;
  	top: 110px;
- 	border-radius: 50px;
  	color: #088A08;
 }
 
 #box2 {
 	background-color: transparent;
-	padding: 40px;
+	padding: 5%;
+}
+
+#table1 {	
 	color: #088A08;
 }
 
-#table1 {
-	
-	
-	color: #088A08;
+#intents {
+	font-weight: bold;
 }
+
 
 .column1 {
 	width: 4%;
@@ -38,3 +39,17 @@ body {
 	width: 8%;
 }
 
+#titolIntents {
+	width: 20%;
+}
+
+#barraProgres {
+	width: 20%;
+}
+
+#progressbar>div {
+  background-color:  #088A08;
+  width: 25%;
+  height: 15px;
+  border-right: 2px solid black;
+}
