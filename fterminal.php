@@ -13,7 +13,7 @@
 		// Array que contindrà totes les paraules.
 
 		//array ca
-		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+		$special_characters = array('!','"','#','$','%','(',')','*','+',',','-','.','/',':',';','=','?','@','[',']','^','_','`','{','|','~');
 		$volcado = "";
 
 		//
@@ -95,7 +95,8 @@
 
 
 		$volcado = $volcado;
-		$id_span = array('wfirst','wsecond','wthird','wfourth','wfiveth','wsixth');
+
+		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$rand_pos = array('');
 		for ($i=0; $i < 6; $i++) { 
 			$random_position = rand(0,strlen($volcado)-1);
@@ -104,11 +105,15 @@
 				$i = $i - 1;
 				
 			}else{
-				$volcado = substr_replace($volcado, "<span>".$array[$randomPalabra[$i]]."</span>", $random_position, 0);
-				
+
+				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
 				array_push($rand_pos, $random_position);
 				array_push($rand_pos, $random_position-1);
-				array_push($rand_pos, $random_position+1);
+				array_push($rand_pos, $random_position+2);
+				array_push($rand_pos, $random_position+3);
+				array_push($rand_pos, $random_position+4);
+				array_push($rand_pos, $random_position+5);
+				
 				
 			}
 		}
@@ -146,6 +151,7 @@
 		
 
 		$volcado=preg_replace('/\s+/','',$volcado);
+		$volcado = preg_replace("/(id)/", " id", $volcado);
 		// echo $volcado.$array[array_rand($array,1)];
 		echo $volcado;
 		
