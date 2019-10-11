@@ -9,7 +9,22 @@
 </head>
 <body>
 	<?php
+
 		// Array que contindrà totes les paraules.
+
+		//array ca
+		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+		$volcado = "";
+
+		$i = 1;
+
+		// Caracteres especiales de forma random
+		for ($i; $i<=354;$i++){
+			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
+			
+		}
+	
+
 		$array= array();
 		// Obrim l'arxiu que conté les paraules.
 		$fp = fopen("paraules.txt", "r");
@@ -29,6 +44,7 @@
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
+
 		echo $array[$randomPalabra[0]];
 		echo $array[$randomPalabra[1]];
 		echo $array[$randomPalabra[2]];
@@ -67,8 +83,32 @@
 		echo '</tbody>';
 		echo '</table>';
 
+
+		 $primera=$array[$randomPalabra[0]];
+		 $segunda=$array[$randomPalabra[1]];
+		 $terc=$array[$randomPalabra[2]];
+		 $cuarta=$array[$randomPalabra[3]];
+		 $quinta=$array[$randomPalabra[4]];
+		 $sexta=$array[$randomPalabra[5]];
+
+		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+
+		$volcado = "";
+
+		$i = 0;
+		for ($i; $i<=12;$i++){
+			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
+			
+		}
+		
+		$volcado=preg_replace('/\s+/','',$volcado);
+		echo $volcado.$array[array_rand($array,1)];
+		
+
 		echo "</div>";
 		echo "</div>";
+
+
 
 	?>
 
