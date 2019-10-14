@@ -43,6 +43,3 @@ function intents(nombre_intents) {
 	}
 }
 
-function hola() {
-	alert("Hola");
-}

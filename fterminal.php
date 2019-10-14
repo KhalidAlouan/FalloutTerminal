@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<style type="text/css" src=""></style>
 	<script type="text/javascript" src="fterminalJS.js"></script>
-    <link rel="stylesheet" type="text/css" href="terminal.css"> 
+    <link rel="stylesheet" type="text/css" href="terminal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
 <body>
 	<?php
@@ -81,6 +82,7 @@
 		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
 		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth"></progress></h4>';
 
+
 		echo '<h4 id="password" hidden>';
 		echo "$password</h4>";
 
@@ -88,41 +90,11 @@
 		echo '<table id="table1">';
 		echo '<tbody>';
 
-		// Llistes amb el volcat a pujar.
-		$cachos = array();
-		$cachos2 = array();
 
-		// Contadors per agafar el que toca de les llistes.
-		$contCachos = 0;
-		$contCachos2 = 0;
-		// I create every row iterating.
-		for($i=0; $i < 17; $i++) {
-
-			echo '<tr>';
-
-			$direction1 = $arrayDirecciones1[$i];
-			$direction2 = $arrayDirecciones2[$i];
-
-			echo '<th class="column1" align="left">';
-			echo "$direction1</th>";
-			echo '<th class="column2">	$cachos[contCachos]</th>';
-			echo '<th class="column1" align="left">';
-			echo "$direction2</th>";
-			echo '<th class="column2">	$cachos2[contCachos2]</th>';
-
-			echo '</tr>';
-			$contCachos += 1;
-			$contCachos2 += 1;
-		}
-
-		echo '</tbody>';
-		echo '</table>';
-
-		
 
 		$volcado = $volcado;
 
-		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
+		$id_span = array("wfirst","wsecond","wthird","wfourth","wfifth","wsixth");
 		$rand_pos = array('');
 		for ($i=0; $i < 6; $i++) { 
 			$random_position = rand(0,strlen($volcado));
@@ -130,7 +102,7 @@
 			if (in_array($random_position, $rand_pos)) {
 				$i = $i - 1;	
 			}else{
-				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
+				$volcado = substr_replace($volcado, '<span id="'.$id_span[$i].'">'.$array[$randomPalabra[$i]].'</span>', $random_position,0);
 				array_push($rand_pos, $random_position);
 				array_push($rand_pos, $random_position-1);
 				array_push($rand_pos, $random_position+2);
@@ -144,6 +116,59 @@
 		for ($i; $i<=12;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 		}
+
+		$volcado=preg_replace('/\s+/','',$volcado);
+		$volcado = preg_replace("/(id)/", " id", $volcado);
+
+		// Llistes amb el volcat a pujar.
+		$cachos = array();
+		$cachos2 = array();
+
+		$posInici = 0;
+		$longitud_str = 12;
+
+		for ($i=0; $i<34; $i++) {
+			if ($i < 17) {
+				array_push($cachos, substr($volcado, $posInici, $longitud_str));
+			} else {
+				array_push($cachos2, substr($volcado, $posInici, $longitud_str));
+			}
+			$posInici += 12;
+		}
+
+		//$prova = $cachos[1];
+
+		//$prova = $array[$cachos[0]];
+		//echo "<h3>$prova</h3>";
+
+	
+		// I create every row iterating.
+		for($i=0; $i < 17; $i++) {
+
+			echo '<tr>';
+
+			$direction1 = $arrayDirecciones1[$i];
+			$direction2 = $arrayDirecciones2[$i];
+
+			echo '<th class="column1" align="left">';
+			echo "$direction1</th>";
+			echo '<th class="column2">';
+			echo "$cachos[$i]</th>";
+			echo '<th class="column1" align="left">';
+			echo "$direction2</th>";
+			echo '<th class="column2">';
+			echo "$cachos2[$i]</th>";
+
+			echo '</tr>';
+
+		}
+
+		echo '</tbody>';
+		echo '</table>';
+
+		
+
+		
 
 
 		// for ($i=0; $i < 6; $i++) { 
@@ -164,11 +189,11 @@
 			
 		// }
 		
-		$volcado=preg_replace('/\s+/','',$volcado);
-		$volcado = preg_replace("/(id)/", " id", $volcado);
-		// echo $volcado.$array[array_rand($array,1)];
-		echo $volcado;
 		
+		// echo $volcado.$array[array_rand($array,1)];
+		// echo $volcado;
+		
+
 
 		
 		echo "</div>";
