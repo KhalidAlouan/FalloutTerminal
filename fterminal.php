@@ -50,6 +50,7 @@
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
+
 		/**
 		echo $array[$randomPalabra[0]];
 		echo $array[$randomPalabra[1]];
@@ -58,6 +59,7 @@
 		echo $array[$randomPalabra[4]];
 		echo $array[$randomPalabra[5]];
 		echo '<br>';*/
+
 
 
 		//$primera=$array[$randomPalabra[0]];
@@ -102,15 +104,21 @@
 			if (in_array($random_position, $rand_pos)) {
 				$i = $i - 1;	
 			}else{
-				$volcado = substr_replace($volcado, '<span id="'.$id_span[$i].'">'.$array[$randomPalabra[$i]].'</span>', $random_position,0);
+
+				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
+				
 				array_push($rand_pos, $random_position);
 				array_push($rand_pos, $random_position-1);
 				array_push($rand_pos, $random_position+2);
+
 				array_push($rand_pos, $random_position+3);
 				array_push($rand_pos, $random_position+4);
 				array_push($rand_pos, $random_position+5);
+
 			}
 		}
+		
+
 
 		$i = 1;
 		for ($i; $i<=12;$i++){
@@ -171,6 +179,7 @@
 		
 
 
+
 		// for ($i=0; $i < 6; $i++) { 
 		// 	$rand_pos = array('');
 		// 	$random_position = rand(0,strlen($volcado)-1);
@@ -178,6 +187,10 @@
 		// 		$volcado = $volcado=$array[$randomPalabra[$i]];
 		// 	}
 		// }		
+
+
+			
+
 
 		// $special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
 
@@ -199,7 +212,7 @@
 		echo "</div>";
 		echo "</div>";
 
-		
+
 	?>
 
 	
