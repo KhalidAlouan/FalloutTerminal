@@ -13,7 +13,7 @@
 		// Array que contindrà totes les paraules.
 
 		//array ca
-		$special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
+		$special_characters = array('!','"','#','$','%','(',')','*','+',',','-','.','/',':',';','=','?','@','[',']','^','_','`','{','|','~');
 		$volcado = "";
 
 		//
@@ -46,6 +46,15 @@
 		echo '<div id="box1">';
 		echo '<div id="box2">';
 
+		/**
+		echo $array[$randomPalabra[0]];
+		echo $array[$randomPalabra[1]];
+		echo $array[$randomPalabra[2]];
+		echo $array[$randomPalabra[3]];
+		echo $array[$randomPalabra[4]];
+		echo $array[$randomPalabra[5]];
+		echo '<br>';*/
+
 
 
 		//$primera=$array[$randomPalabra[0]];
@@ -62,20 +71,25 @@
 		$arrayDirecciones2 = array("0xF9E8", "0xF9F4", "0xFA00", "0xFAFC", "0xFA18", "0xFA24", "0xFA30", "0xFA3C", 
 									"0xFA48", "0xFA54", "0xFA60", "0xFA6C", "0xF978", "0xFA84", "0xFA90", "0xFA9C", "0xFAA8");
 
+		$attemptsLeft = 5;
+
+
+		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
+		echo '<h4>ENTER PASSWORD NOW</h4>'; 
+		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
+		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="squareThird"></progress> <progress id="progressFourth"></progress> <progress id="progressFifth"></progress></h4>';
+
 		// I create the table.
 		echo '<table id="table1">';
 		echo '<tbody>';
 
-		$attemptsLeft = 5;
+		// Llistes amb el volcat a pujar.
+		$cachos = array();
+		$cachos2 = array();
 
-		echo '<tr id="intents">';
-		echo '<th id="titolIntents">'; 
-		echo "$attemptsLeft ATTEMPT(S) LEFT: </th>";
-
-	
-		echo '<th id="barraProgres"><div id="progressbar"> <div> </div> </div></th>';
-		echo '</tr>';
-
+		// Contadors per agafar el que toca de les llistes.
+		$contCachos = 0;
+		$contCachos2 = 0;
 		// I create every row iterating.
 		for($i=0; $i < 17; $i++) {
 
@@ -84,14 +98,16 @@
 			$direction1 = $arrayDirecciones1[$i];
 			$direction2 = $arrayDirecciones2[$i];
 
-			echo '<th class="column1">';
+			echo '<th class="column1" align="left">';
 			echo "$direction1</th>";
-			echo '<th class="column2"></th>';
-			echo '<th class="column1">';
+			echo '<th class="column2">	$cachos[contCachos]</th>';
+			echo '<th class="column1" align="left">';
 			echo "$direction2</th>";
-			echo '<th class="column2"></th>';
+			echo '<th class="column2">	$cachos2[contCachos2]</th>';
 
 			echo '</tr>';
+			$contCachos += 1;
+			$contCachos2 += 1;
 		}
 
 		echo '</tbody>';
@@ -99,27 +115,24 @@
 
 
 		$volcado = $volcado;
-		$id_span = array('wfirst','wsecond','wthird','wfourth','wfiveth','wsixth');
+
+		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$rand_pos = array('');
 		for ($i=0; $i < 6; $i++) { 
 			$random_position = rand(0,strlen($volcado));
 
 			if (in_array($random_position, $rand_pos)) {
-				$i = $i - 1;
-				
+				$i = $i - 1;	
 			}else{
-				$volcado = substr_replace($volcado, "<span>".$array[$randomPalabra[$i]]."</span>", $random_position, 0);
+				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
 				
-				array_push($rand_pos, $random_position);
-				array_push($rand_pos, $random_position-1);
-				array_push($rand_pos, $random_position+2);
-				
+
+				array_push($rand_pos, $random_position+3);
+				array_push($rand_pos, $random_position+4);
+				array_push($rand_pos, $random_position+5);
+
 			}
 		}
-			
-		
-
-
 		
 
 
@@ -127,6 +140,8 @@
 		for ($i; $i<=12;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 		}
+
+
 
 		// for ($i=0; $i < 6; $i++) { 
 		// 	$rand_pos = array('');
@@ -136,13 +151,9 @@
 		// 	}
 		// }		
 
+
 			
 
-
-
-
-		
-		
 
 		// $special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
 
@@ -154,15 +165,14 @@
 			
 		// }
 		
-
 		$volcado=preg_replace('/\s+/','',$volcado);
+		$volcado = preg_replace("/(id)/", " id", $volcado);
 		// echo $volcado.$array[array_rand($array,1)];
 		echo $volcado;
 		
 
 		echo "</div>";
 		echo "</div>";
-
 
 
 	?>
