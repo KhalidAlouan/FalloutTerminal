@@ -6,14 +6,21 @@ body {
 }
 
 #box1 {
-	height: 517px;
- 	width: 682px;
+	/**height: 517px;
+ 	width: 682px;**/
+
+ 	height: 80%;
+ 	width: 50%;
  	background-image: url("centre_terminal.png");
  	background-size: cover;                      
     background-repeat: no-repeat;
  	position: absolute;
- 	left: 310px;
- 	top: 110px;
+ 	padding-top: 1.5%;
+ 	padding-left: 1%;
+ 	/**left: 310px;
+ 	top: 110px;**/
+ 	left: 25%;
+ 	top: 16%;
  	color: #088A08;
 }
 
