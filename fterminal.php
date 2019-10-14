@@ -45,14 +45,14 @@
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
-
+		/**
 		echo $array[$randomPalabra[0]];
 		echo $array[$randomPalabra[1]];
 		echo $array[$randomPalabra[2]];
 		echo $array[$randomPalabra[3]];
 		echo $array[$randomPalabra[4]];
 		echo $array[$randomPalabra[5]];
-		echo '<br>';
+		echo '<br>';*/
 
 
 		//$primera=$array[$randomPalabra[0]];
@@ -75,12 +75,19 @@
 		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
 		echo '<h4>ENTER PASSWORD NOW</h4>'; 
 		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
-		echo '<progress id="progressBar"></progress></h4>';
+		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="squareThird"></progress> <progress id="progressFourth"></progress> <progress id="progressFifth"></progress></h4>';
 
 		// I create the table.
 		echo '<table id="table1">';
 		echo '<tbody>';
 
+		// Llistes amb el volcat a pujar.
+		$cachos = array();
+		$cachos2 = array();
+
+		// Contadors per agafar el que toca de les llistes.
+		$contCachos = 0;
+		$contCachos2 = 0;
 		// I create every row iterating.
 		for($i=0; $i < 17; $i++) {
 
@@ -91,12 +98,14 @@
 
 			echo '<th class="column1" align="left">';
 			echo "$direction1</th>";
-			echo '<th class="column2"></th>';
+			echo '<th class="column2">	$cachos[contCachos]</th>';
 			echo '<th class="column1" align="left">';
 			echo "$direction2</th>";
-			echo '<th class="column2"></th>';
+			echo '<th class="column2">	$cachos2[contCachos2]</th>';
 
 			echo '</tr>';
+			$contCachos += 1;
+			$contCachos2 += 1;
 		}
 
 		echo '</tbody>';
@@ -111,10 +120,8 @@
 			$random_position = rand(0,strlen($volcado));
 
 			if (in_array($random_position, $rand_pos)) {
-				$i = $i - 1;
-				
+				$i = $i - 1;	
 			}else{
-
 				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
 				array_push($rand_pos, $random_position);
 				array_push($rand_pos, $random_position-1);
@@ -122,8 +129,6 @@
 				array_push($rand_pos, $random_position+3);
 				array_push($rand_pos, $random_position+4);
 				array_push($rand_pos, $random_position+5);
-				
-				
 			}
 		}
 
