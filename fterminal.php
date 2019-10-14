@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <title>Terminal</title>
 	<meta charset="utf-8">
@@ -42,6 +42,10 @@
 		// Escollim sis paraules a l'atzar.
 		$randomPalabra = array_rand($array, 6);
 
+		$aleatori = random_int(0, 5);
+
+		$password = $array[$randomPalabra[$aleatori]];
+
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
@@ -75,7 +79,10 @@
 		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
 		echo '<h4>ENTER PASSWORD NOW</h4>'; 
 		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
-		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="squareThird"></progress> <progress id="progressFourth"></progress> <progress id="progressFifth"></progress></h4>';
+		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth"></progress></h4>';
+
+		echo '<h4 id="password" hidden>';
+		echo "$password</h4>";
 
 		// I create the table.
 		echo '<table id="table1">';
@@ -111,6 +118,7 @@
 		echo '</tbody>';
 		echo '</table>';
 
+		
 
 		$volcado = $volcado;
 
@@ -162,9 +170,14 @@
 		echo $volcado;
 		
 
+		
 		echo "</div>";
 		echo "</div>";
+
+		
 	?>
+
+	
 
 </body>
 </html>
