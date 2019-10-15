@@ -21,7 +21,7 @@
 
 		// Caracteres especiales de forma random
 
-		for ($i=1; $i<=354;$i++){
+		for ($i=1; $i<=366;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 			
 		}
@@ -79,11 +79,12 @@
 		$attemptsLeft = 5;
 
 
-		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
-		echo '<h4>ENTER PASSWORD NOW</h4>'; 
-		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
-		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth"></progress></h4>';
-
+		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4><br>';
+		echo '<h4>ENTER PASSWORD NOW</h4><br>'; 
+		echo '<h4 id="intentsRestants">5</h4>';
+		echo '<h4> ATTEMPT(S) LEFT:	'; 
+		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth">
+			</progress></h4><br>';
 
 		echo '<h4 id="password" hidden>';
 		echo "$password</h4>";
@@ -105,7 +106,10 @@
 				$i = $i - 1;	
 			}else{
 
-				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
+				//$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
+
+				$volcado = substr_replace($volcado, $array[$randomPalabra[$i]], $random_position,0);
+
 				
 				array_push($rand_pos, $random_position);
 				array_push($rand_pos, $random_position-1);
