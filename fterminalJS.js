@@ -43,3 +43,40 @@ function intents(nombre_intents) {
 	}
 }
 
+document.getElementById("wfirst").setAttribute("onclick","comprovar()");
+document.getElementById("wsecond").setAttribute("onclick","comprovar()");
+document.getElementById("wthird").setAttribute("onclick","comprovar()");
+document.getElementById("wfourth").setAttribute("onclick","comprovar()");
+document.getElementById("wfifth").setAttribute("onclick","comprovar()");
+document.getElementById("wsixth").setAttribute("onclick","comprovar()");
+
+
+function comprovar(){
+	var password=document.getElementById("password").value;
+	var first=document.getElementById("wfirst").value;
+	var second=document.getElementById("wsecond").value;
+	var third=document.getElementById("wthird").value;
+	var fourth=document.getElementById("wfourth").value;
+	var fifth=document.getElementById("wfifth").value;
+	var sixth=document.getElementById("wsixth").value;
+
+	if (first!=password) {
+		intents(1);
+	}
+	else if (second!=password) {
+		intents(1);
+	}
+	else if (third!=password) {
+		intents(1);
+	}
+	else if (fourth!=password) {
+		intents(1);
+	}
+	else if (fifth!=password) {
+		intents(1);
+	}
+	else{
+		intents(1);
+	}
+}
+

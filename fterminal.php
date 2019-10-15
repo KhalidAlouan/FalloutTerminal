@@ -24,6 +24,7 @@
 		for ($i=1; $i<=354;$i++){
 			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
 			
+			
 		}
 	
 
@@ -40,13 +41,13 @@
 		// Tanquem l'arxiu.
 		fclose($fp);
 
+
+
 		// Escollim sis paraules a l'atzar.
 		$randomPalabra = array_rand($array, 6);
 
 		$aleatori = random_int(0, 5);
-
-		$password = $array[$randomPalabra[$aleatori]];
-
+	
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
@@ -144,6 +145,10 @@
 			$posInici += 12;
 		}
 
+
+		$cont=0;
+
+		
 		//$prova = $cachos[1];
 
 		//$prova = $array[$cachos[0]];
