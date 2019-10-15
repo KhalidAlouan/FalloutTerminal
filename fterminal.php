@@ -74,32 +74,23 @@
 			$word = $choosen_word_array[$i];
 
 			if ($not_special_char == 0) {
-				$volcado = substr_replace($volcado, "<span id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
+				$volcado = substr_replace($volcado, "<span onclick=comprovar();comprovarParaula() id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
 				$l = $l + 1;
 			}else{
 				$i = $i-1;
 			}
 		}
 	
-
-	
-
-		
+		echo $volcado;
 
 
 		$aleatori = random_int(0, 5);
 
-		$password = $choosen_word_array[$aleatori]];
+		$password = $choosen_word_array[$aleatori];
 
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
-
-
-		// Mostrem les paraules per pantalla.
-		echo '<div id="box1">';
-		echo '<div id="box2">';
-
 
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
 									"0xF97C", "0xF988", "0xF994", "0xF9A0", "0xF9AC", "0xF9B8", "0xF9C4", "0xF9D0", "0xF9DC");
@@ -125,7 +116,7 @@
 
 
 
-		echo $volcado;
+		//echo $volcado;
 
 
 		// Llistes amb el volcat a pujar.
@@ -144,10 +135,6 @@
 			$posInici += 12;
 		}
 
-		//$prova = $cachos[1];
-
-		//$prova = $array[$cachos[0]];
-		//echo "<h3>$prova</h3>";
 
 	
 		// I create every row iterating.
@@ -174,42 +161,7 @@
 		echo '</tbody>';
 		echo '</table>';
 
-		
 
-		
-
-
-
-		// for ($i=0; $i < 6; $i++) { 
-		// 	$rand_pos = array('');
-		// 	$random_position = rand(0,strlen($volcado)-1);
-		// 	if (in_array($random_position, $rand_pos, false)) {
-		// 		$volcado = $volcado=$array[$randomPalabra[$i]];
-		// 	}
-		// }		
-
-
-			
-
-
-		// $special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
-
-		// $volcado = "";
-
-		// $i = 0;
-		// for ($i; $i<=12;$i++){
-		// 	$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
-			
-		// }
-		
-		
-		// echo $volcado.$array[array_rand($array,1)];
-		// echo $volcado;
->>>>>>> 90d2cf5b4dcb4bf6dbf1879a7a5fb0cdc71a0901
-		
-
-
-		
 		echo "</div>";
 		echo "</div>";
 
