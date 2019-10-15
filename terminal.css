@@ -1,3 +1,15 @@
+* {
+  font-size: 1.2vw;
+}
+
+h4 { 
+  display:inline; 
+}
+
+#password {
+  display: none;
+}
+
 body {
 	background-image: url("terminal.jpg");
 	background-size: cover;                      
@@ -6,21 +18,17 @@ body {
 }
 
 #box1 {
-	/**height: 517px;
- 	width: 682px;**/
-
+  position: absolute;
  	height: 80%;
  	width: 50%;
  	background-image: url("centre_terminal.png");
- 	background-size: cover;                      
-    background-repeat: no-repeat;
+ 	background-size: contain;                    
+  background-repeat: no-repeat; 
  	position: absolute;
  	padding-top: 1.5%;
  	padding-left: 1%;
- 	/**left: 310px;
- 	top: 110px;**/
- 	left: 25%;
- 	top: 16%;
+ 	left: 24vw;
+ 	top: 8vw;
  	color: #088A08;
 }
 
@@ -35,7 +43,7 @@ body {
 	table-layout: fixed;
 	width: 100%;
 	display: flex;
-    flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 #intents {
@@ -115,9 +123,17 @@ h4 {
 }
 
 
-
 span:hover {
 	color: black;
-	background-color: green;
+	background-color: #088A08;
+}
+
+
+@media only screen and (max-width: 1280px) {
+
+   *{ 
+      font-size: 1vw; 
+   }
+
 }
 

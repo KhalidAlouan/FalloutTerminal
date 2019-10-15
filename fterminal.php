@@ -15,6 +15,7 @@
 
 		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
 		$volcado = "";
+	
 
 
 		$array= array();
@@ -47,7 +48,7 @@
 			$i = $i + 1;
 		}
 
-		for ($i=1; $i<=408; $i++){
+		for ($i=1; $i<=total_char; $i++){
 			$volcado = $volcado . $special_char[array_rand($special_char,1)];
 			
 		}
@@ -81,7 +82,10 @@
 			}
 		}
 	
+<<<<<<< HEAD
 		echo $volcado;
+=======
+>>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
 
 
 		$aleatori = random_int(0, 5);
@@ -101,11 +105,12 @@
 		$attemptsLeft = 5;
 
 
-		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4>';
-		echo '<h4>ENTER PASSWORD NOW</h4>'; 
-		echo "<h4>$attemptsLeft ATTEMPT(S) LEFT:	"; 
-		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth"></progress></h4>';
-
+		echo '<h4>ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</h4><br>';
+		echo '<h4>ENTER PASSWORD NOW</h4><br>'; 
+		echo '<h4 id="intentsRestants">5</h4>';
+		echo '<h4> ATTEMPT(S) LEFT:	'; 
+		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth">
+			</progress></h4><br>';
 
 		echo '<h4 id="password" hidden>';
 		echo "$password</h4>";
@@ -116,15 +121,19 @@
 
 
 
+<<<<<<< HEAD
 		//echo $volcado;
 
 
+=======
+>>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
 		// Llistes amb el volcat a pujar.
 		$cachos = array();
 		$cachos2 = array();
 
 		$posInici = 0;
 		$longitud_str = 12;
+
 
 		for ($i=0; $i<34; $i++) {
 			if ($i < 17) {
@@ -161,7 +170,14 @@
 		echo '</tbody>';
 		echo '</table>';
 
+<<<<<<< HEAD
 
+=======
+		
+
+
+		
+>>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
 		echo "</div>";
 		echo "</div>";
 
