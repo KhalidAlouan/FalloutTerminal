@@ -10,21 +10,11 @@
 <body>
 	<?php
 
-		// Array que contindrà totes les paraules.
+		define ('total_char','408');
 
-		//array ca
-		$special_characters = array('!','"','#','$','%','(',')','*','+',',','-','.','/',':',';','=','?','@','[',']','^','_','`','{','|','~');
+		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
 		$volcado = "";
 
-		//
-
-		// Caracteres especiales de forma random
-
-		for ($i=1; $i<=354;$i++){
-			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
-			
-		}
-	
 
 		$array= array();
 		// Obrim l'arxiu que conté les paraules.
@@ -39,28 +29,68 @@
 		// Tanquem l'arxiu.
 		fclose($fp);
 
-		// Escollim sis paraules a l'atzar.
-		$randomPalabra = array_rand($array, 6);
+		
+		$array_choosen_word_index = [];
+		$choosen_word_array = [];
+		$i = 0;
+		$leng_array = count($array)-1;
+		while ($i<6) {
+			$random_index = rand(0,$leng_array);
+			while (in_array($random_index, $array_choosen_word_index)){
+					$random_index = rand(0,$leng_array);
+				}
+			
+
+			$array_choosen_word_index[] = $random_index;
+			$choosen_word_array[] = $array[$random_index];
+			$i = $i + 1;
+		}
+
+		for ($i=1; $i<=408; $i++){
+			$volcado = $volcado . $special_char[array_rand($special_char,1)];
+			
+		}
+
+		
+		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
+
+		$random_pos = 0;
+		$choosen_word_array_leng = count($choosen_word_array);
+		for ($i=0;$i<$choosen_word_array_leng;$i++){
+			$l = 0;
+			$not_special_char = 0;
+			$leng_word = strlen($choosen_word_array[$i]);
+			$random_pos = rand(1,total_char-$leng_word);
+			$array_split = str_split(substr($volcado,$random_pos-1,$leng_word+2));
+
+			foreach ($array_split as $caracter) {
+				if (!in_array($caracter, $special_char)) {
+					$not_special_char=$not_special_char+1;
+				}
+				
+			}
+
+			$word = $choosen_word_array[$i];
+
+			if ($not_special_char == 0) {
+				$volcado = substr_replace($volcado, "<span id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
+				$l = $l + 1;
+			}else{
+				$i = $i-1;
+			}
+		}
+	
+
+	
+
+		
+
+
+
 
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box1">';
 		echo '<div id="box2">';
-
-		echo $array[$randomPalabra[0]];
-		echo $array[$randomPalabra[1]];
-		echo $array[$randomPalabra[2]];
-		echo $array[$randomPalabra[3]];
-		echo $array[$randomPalabra[4]];
-		echo $array[$randomPalabra[5]];
-		echo '<br>';
-
-
-		//$primera=$array[$randomPalabra[0]];
-		//$segunda=$array[$randomPalabra[1]];
-		//$terc=$array[$randomPalabra[2]];
-		//$cuarta=$array[$randomPalabra[3]];
-		//$quinta=$array[$randomPalabra[4]];
-		//$sexta=$array[$randomPalabra[5]];
 
 
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
@@ -102,58 +132,6 @@
 		echo '</tbody>';
 		echo '</table>';
 
-
-		$volcado = $volcado;
-
-		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
-		$rand_pos = array('');
-		for ($i=0; $i < 6; $i++) { 
-			$random_position = rand(0,strlen($volcado));
-
-			if (in_array($random_position, $rand_pos)) {
-				$i = $i - 1;
-				
-			}else{
-
-				$volcado = substr_replace($volcado, "<span id='".$id_span[$i]."'>".$array[$randomPalabra[$i]]."</span>", $random_position,0);
-				array_push($rand_pos, $random_position);
-				array_push($rand_pos, $random_position-1);
-				array_push($rand_pos, $random_position+2);
-				array_push($rand_pos, $random_position+3);
-				array_push($rand_pos, $random_position+4);
-				array_push($rand_pos, $random_position+5);
-				
-				
-			}
-		}
-
-		$i = 1;
-		for ($i; $i<=12;$i++){
-			$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
-		}
-
-
-		// for ($i=0; $i < 6; $i++) { 
-		// 	$rand_pos = array('');
-		// 	$random_position = rand(0,strlen($volcado)-1);
-		// 	if (in_array($random_position, $rand_pos, false)) {
-		// 		$volcado = $volcado=$array[$randomPalabra[$i]];
-		// 	}
-		// }		
-
-		// $special_characters = array('!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','>','=','?','@','[',']','^','_','`','{','|','~');
-
-		// $volcado = "";
-
-		// $i = 0;
-		// for ($i; $i<=12;$i++){
-		// 	$volcado = $volcado . $special_characters[array_rand($special_characters,1)];
-			
-		// }
-		
-		$volcado=preg_replace('/\s+/','',$volcado);
-		$volcado = preg_replace("/(id)/", " id", $volcado);
-		// echo $volcado.$array[array_rand($array,1)];
 		echo $volcado;
 		
 
