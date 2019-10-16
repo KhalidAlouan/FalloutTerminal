@@ -13,7 +13,7 @@
 
 		define ('total_char','408');
 
-		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
+		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$volcado = "";
 	
 
@@ -52,7 +52,7 @@
 			$volcado = $volcado . $special_char[array_rand($special_char,1)];
 			
 		}
-
+		
 		
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 
@@ -82,10 +82,7 @@
 			}
 		}
 	
-<<<<<<< HEAD
-		echo $volcado;
-=======
->>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
+		
 
 
 		$aleatori = random_int(0, 5);
@@ -121,19 +118,14 @@
 
 
 
-<<<<<<< HEAD
-		//echo $volcado;
-
-
-=======
->>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
-		// Llistes amb el volcat a pujar.
+		//Llistes amb el volcat a pujar.
 		$cachos = array();
 		$cachos2 = array();
 
 		$posInici = 0;
 		$longitud_str = 12;
 
+		
 
 		for ($i=0; $i<34; $i++) {
 			if ($i < 17) {
@@ -162,22 +154,18 @@
 			echo "$direction2</th>";
 			echo '<th class="column2">';
 			echo "$cachos2[$i]</th>";
-
+			if ($i == 0){
+				echo '<th class="column3">';
+				echo "</th>";
+			}
 			echo '</tr>';
+
 
 		}
 
 		echo '</tbody>';
 		echo '</table>';
 
-<<<<<<< HEAD
-
-=======
-		
-
-
-		
->>>>>>> 7910d40b03205ab5a366908297374e6c58238d06
 		echo "</div>";
 		echo "</div>";
 

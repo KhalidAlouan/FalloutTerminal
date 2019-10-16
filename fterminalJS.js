@@ -49,3 +49,11 @@ function intents(nombre_intents) {
 	}
 }
 
+
+
+
+function wordSelected(word){
+	var palabra = document.getEl
+	var password = document.getElementById("password");
+	document.getElementByClass("column3").innerHTML = palabras;
+}
