@@ -53,13 +53,13 @@ function intents(nombre_intents) {
 
 
 var cont=0;
-
+var atp=5;
 
 
 function comprovar(){
-	var atp=5;
+	
 	var password=document.getElementById("password").value;
-	var palabras=document.getElementById("wfirst");
+	var palabras=document.getElementsByTagName("span");
 	console.log(palabras);
 	// var second=document.getElementsByTagName("span")[1].value;
 	// var third=document.getElementsByTagName("span")[2].value;
@@ -104,6 +104,7 @@ function comprovar(){
 function wordSelected(word){
 	//var palabra = document.getEl
 	var password = document.getElementById("password");
-	document.getElementByClass("column3").innerHTML = palabras;
+	document.getElementsByClassName("column3").innerHTML = palabras;
+	
 }
 
