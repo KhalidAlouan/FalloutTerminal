@@ -52,8 +52,11 @@ function intents(nombre_intents) {
 
 
 
-function wordSelected(word){
-	var palabra = document.getEl
+function wordSelected(){
+	
 	var password = document.getElementById("password");
-	document.getElementByClass("column3").innerHTML = palabras;
+
+	var palabra[] = document.getElementsByTagName("span");
+	document.getElementsByClassName("column3").innerHTML+= palabra+"<br></br>";
+
 }
