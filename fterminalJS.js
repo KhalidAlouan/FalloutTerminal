@@ -101,10 +101,15 @@ function comprovar(){
 
 
 
-function wordSelected(word){
-	//var palabra = document.getEl
-	var password = document.getElementById("password");
-	document.getElementsByClassName("column3").innerHTML = palabras;
+
+
+
+function wordSelected(){
 	
+	var password = document.getElementById("password");
+
+	var palabra= document.getElementsByTagName("span");
+	document.getElementsByClassName("column3").innerHTML+= palabra+"<br></br>";
+
 }
 
