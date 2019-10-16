@@ -12,6 +12,8 @@
 	<?php
 		define ('total_char','408');
 		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
+		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+								'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 		$volcado = "";
 	
 		$array= array();
@@ -45,6 +47,7 @@
 			
 		}
 		
+		
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$random_pos = 0;
 		$choosen_word_array_leng = count($choosen_word_array);
@@ -62,7 +65,8 @@
 			}
 			$word = $choosen_word_array[$i];
 			if ($not_special_char == 0) {
-				$volcado = substr_replace($volcado, "<span onclick='comprovar()' id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
+				//$volcado = substr_replace($volcado, "<span onclick=comprovar();comprovarParaula() id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
+				$volcado = substr_replace($volcado, $word, $random_pos,$leng_word);
 				$l = $l + 1;
 			}else{
 				$i = $i-1;
@@ -85,27 +89,56 @@
 		echo '<h4> ATTEMPT(S) LEFT:	'; 
 		echo '<progress id="progressFirst"></progress> <progress id="progressSecond"></progress> <progress id="progressThird"></progress> <progress id="progressFourth" ></progress> <progress id="progressFifth">
 			</progress></h4><br>';
-		echo "<input value=".$password." id='password' hidden>";
-		
+		echo '<h4 id="password" hidden>';
+		echo "$password</h4>";
 		// I create the table.
 		echo '<table id="table1">';
 		echo '<tbody>';
+		//Llistes amb el volcat a pujar.
+		//echo $volcado;
+		//$choosen_word_array[]
+		$inicial_paraules = array();
+		$final_paraules = array();
+		for ($i=0; $i<6; $i++) {
+			array_push($inicial_paraules, $choosen_word_array[$i][0]);
+			array_push($final_paraules, $choosen_word_array[$i][4]);
+		}
+		//var_dump($inicial_paraules);
 		// Llistes amb el volcat a pujar.
 		$cachos = array();
 		$cachos2 = array();
 		$posInici = 0;
 		$longitud_str = 12;
+		$tros2;
+		$tros3;
+		$num_par = 0;
 		for ($i=0; $i<34; $i++) {
+			$tros = substr($volcado, $posInici, $longitud_str);
+			$intacte = true;
+			$substitucio = false;
+			$seguir = true;
+			foreach ($inicial_paraules as $lletra) {
+				if (strpos($tros, $lletra) && $seguir == true) {
+					$pos_lletra = intval(strpos($tros, $lletra));
+					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
+					$tros3 = substr_replace($tros2, '<span>'.$choosen_word_array[$num_par], $pos_lletra);
+					$num_par += 1;
+					$seguir = false;
+					$substitucio = true;
+				}; 
+			};
+			if(!$substitucio) {
+				$tros3 = $tros;
+			}
 			if ($i < 17) {
-				array_push($cachos, substr($volcado, $posInici, $longitud_str));
+				array_push($cachos, $tros3);
 			} else {
-				array_push($cachos2, substr($volcado, $posInici, $longitud_str));
+				array_push($cachos2, $tros3);
 			}
 			$posInici += 12;
 		}
-		//$prova = $cachos[1];
-		//$prova = $array[$cachos[0]];
-		//echo "<h3>$prova</h3>";
+		//var_dump($cachos);
+		//var_dump($cachos2);
 	
 		// I create every row iterating.
 		for($i=0; $i < 17; $i++) {
@@ -120,19 +153,54 @@
 			echo "$direction2</th>";
 			echo '<th class="column2">';
 			echo "$cachos2[$i]</th>";
+			if ($i == 0) {
+				echo '<th class="column3" rowspan="17">';
+				echo "Hola</th>";
+			}
 			echo '</tr>';
 		}
 		echo '</tbody>';
 		echo '</table>';
-		
-		
 		echo "</div>";
 		echo "</div>";
-		echo $volcado;
-		echo "<p id='p'>";
 	?>
 
 	
 
 </body>
 </html>
+
+<?php
+	/**
+					//substr_replace ($tros , "<span>" , $pos_lletra); 
+					$tros2 = "";
+					$tros3 = "";
+					$tros4 = "";
+					$cont = 0;
+					//foreach ($tros as $lletra2) {
+					for ($i=0; $i < strlen($tros); $i++) {
+						$lletra2 = $tros[$i];
+						if($i < intval($pos_lletra)) {
+							$tros2 = $tros2.$lletra2;
+						}
+						//$cont += 1;
+					}
+					$tros2 = $tros2.'<span>';
+					/**for ($i=0; $i < strlen($tros); $i++) {
+						$lletra2 = $tros[$i];
+						if($i > intval($pos_lletra)) {
+							$tros3 = $tros3.$lletra2;
+						}
+						//$cont += 1;
+					}
+					$tros3 = $tros3.'</span>';*/
+					/**
+					$tros4 = $tros2.'</span>';
+					//$pos_lletra = strpos($tros, $lletra);
+					//$pos_final = $pos_lletra+5;
+					//substr_replace ($tros , "<span>" , $pos_final); 
+					//substr_replace ($tros , "</span>" , $pos_final);
+					$tros = "<span>".$tros."</span>";
+					//echo "<h4>$tros4</h4><br>";
+					$intacte = false;*/
+?>
