@@ -52,7 +52,7 @@ function intents(nombre_intents) {
 }
 
 
-var cont=0;
+
 var atp=5;
 
 
@@ -60,40 +60,15 @@ function comprovar(){
 	
 	var password=document.getElementById("password").value;
 	var palabras=document.getElementsByTagName("span");
-	console.log(palabras);
-	// var second=document.getElementsByTagName("span")[1].value;
-	// var third=document.getElementsByTagName("span")[2].value;
-	// var fourth=document.getElementsByTagName("span")[3].value;
-	// var fifth=document.getElementsByTagName("span")[4].value;
-	// var sixth=document.getElementsByTagName("span")[5].value;
-	while (cont<=palabras.length){
-		if (palabras[cont]!=password) {
-			console.log(palabras[cont]);
+	
+	for (var i = 0; i <=palabras.length; i++) {
+		if (palabras[i]!=password){
 			intents(atp-1);
-			cont=cont+1;
-		}else{
-			alert("Correcto!!");
+			
 		}
 	}
 	
-	// if (first!=password) {
-	// 	intents(atp-1);
-	// }
-	// else if (second!=password) {
-	// 	intents(atp-1);
-	// }
-	// else if (third!=password) {
-	// 	intents(atp-1);
-	// }
-	// else if (fourth!=password) {
-	// 	intents(atp-1);
-	// }
-	// else if (fifth!=password) {
-	// 	intents(atp-1);
-	// }
-	// else if (sixth!=password) {}{
-	// 	intents(atp-1);
-	// }
+	
 }
 
 
