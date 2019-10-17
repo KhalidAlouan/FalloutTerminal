@@ -122,7 +122,7 @@
 				if (strpos($tros, $lletra) && $seguir == true) {
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
-					$tros3 = substr_replace($tros2, '<span onclick="wordSelected(); comprovar();">'.$choosen_word_array[$num_par], $pos_lletra);
+					$tros3 = substr_replace($tros2, '<span onclick="wordSelected(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 					$num_par += 1;
 					$seguir = false;
 					$substitucio = true;
@@ -156,7 +156,7 @@
 			echo "$cachos2[$i]</th>";
 			if ($i == 0) {
 				echo '<th class="column3" rowspan="17">';
-				echo "Hola</th>";
+				echo "</th>";
 			}
 			echo '</tr>';
 		}
@@ -164,6 +164,7 @@
 		echo '</table>';
 		echo "</div>";
 		echo "</div>";
+	
 	?>
 
 	
