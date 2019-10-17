@@ -122,7 +122,7 @@
 				if (strpos($tros, $lletra) && $seguir == true) {
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
-					$tros3 = substr_replace($tros2, '<span onclick="wordSelected(); comprovar();">'.$choosen_word_array[$num_par], $pos_lletra);
+					$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array[$num_par], $pos_lletra);
 					$num_par += 1;
 					$seguir = false;
 					$substitucio = true;
@@ -146,17 +146,17 @@
 			echo '<tr>';
 			$direction1 = $arrayDirecciones1[$i];
 			$direction2 = $arrayDirecciones2[$i];
-			echo '<th class="column1" align="left">';
+			echo '<th class="column1">';
 			echo "$direction1</th>";
 			echo '<th class="column2">';
 			echo "$cachos[$i]</th>";
-			echo '<th class="column1" align="left">';
+			echo '<th class="column1">';
 			echo "$direction2</th>";
 			echo '<th class="column2">';
 			echo "$cachos2[$i]</th>";
 			if ($i == 0) {
-				echo '<th class="column3" rowspan="17">';
-				echo "Hola</th>";
+				echo '<th id="prompt" class="column3" rowspan="17">';
+				echo "</th>";
 			}
 			echo '</tr>';
 		}
