@@ -1,4 +1,4 @@
-
+//Marcador
 function intents(nombre_intents) {
 	
 	document.getElementById("progressFirst").setAttribute("hidden", ""); 
@@ -55,36 +55,29 @@ function intents(nombre_intents) {
 
 var atp=5;
 
-
-function comprovar(){
-	
+//Funcion para comprovar la contraseña y si la contraseña es incorrecta resta un intento
+function comprovar(element){
+	var p=document.getElementById("p");
 	var password=document.getElementById("password").value;
 	var palabras=document.getElementsByTagName("span");
 	
-	for (var i = 0; i <=palabras.length; i++) {
-		if (palabras[i]!=password){
-			intents(atp-1);
-			
-		}
-	}
 	
+	if (element.textContent!=password) {
+			intents(atp-i);
+	}	
 	
 }
 
 
 
-
-
-
-
-
-
-function wordSelected(){
+function wordSelected(element){
+	
 	
 	var password = document.getElementById("password");
-
 	var palabra= document.getElementsByTagName("span");
-	document.getElementsByClassName("column3").innerHTML+= palabra+"<br></br>";
-
+	
+	
+	document.getElementsByClassName("column3")[0].innerHTML+= element.textContent+"<br></br>";
+		
 }
 
