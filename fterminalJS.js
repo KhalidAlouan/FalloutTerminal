@@ -67,20 +67,26 @@ function comprovar(element){
 
 
 function prova(obj) {
-	document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
-	var paraula = String(obj.innerHTML);
-	prova2(paraula)
+	if (seguir) {
+		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		var paraula = String(obj.innerHTML);
+		prova2(paraula);
+	}
 }
 
+var seguir = true;
 function prova2(paraula) {
 	var contra = String(document.getElementById("password").innerHTML);
-	if (contra != paraula) {
-		nombre_intents -= 1;
-		intents(nombre_intents);
-		document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
-		coincidencia(contra, paraula);
-	} else {
-		document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
+	if (seguir) {
+		if (contra != paraula) {
+			nombre_intents -= 1;
+			intents(nombre_intents);
+			document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
+			coincidencia(contra, paraula);
+		} else {
+			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
+			seguir = false;
+		}
 	}
 }
 

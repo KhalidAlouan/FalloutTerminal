@@ -1,6 +1,6 @@
 * {
-  font-size: 1.2vw;
-  font-style: Courier New;
+  font-size: 1.1vw;
+  font-family: "Courier New", monospace;
 }
 
 h4 { 
@@ -61,7 +61,7 @@ th.column1 {
 
 th.column2 {
 	width: 25%;
-	padding: 0;
+	padding-left: 3%;
   text-align: left;
 }
 
@@ -69,7 +69,7 @@ th.column2 {
   vertical-align: top;
   align-content: left;
   text-align: left;
-  padding-left: 10%;
+  padding-left: 3%;
 }
 
 #titolIntents {
