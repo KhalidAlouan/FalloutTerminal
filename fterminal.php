@@ -100,14 +100,15 @@
 		echo '<table id="table1">';
 		echo '<tbody>';
 
+		//echo $volcado;
 		//Llistes amb el volcat a pujar.
 		//echo $volcado;
 		//$choosen_word_array[]
 		$inicial_paraules = array();
 		$final_paraules = array();
 		for ($i=0; $i<6; $i++) {
-			array_push($inicial_paraules, $choosen_word_array[$i][0]);
-			array_push($final_paraules, $choosen_word_array[$i][4]);
+			array_push($inicial_paraules, $choosen_word_array_ordened[$i][0]);
+			array_push($final_paraules, $choosen_word_array_ordened[$i][4]);
 		}
 		//var_dump($inicial_paraules);
 		// Llistes amb el volcat a pujar.
@@ -130,7 +131,9 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array[$num_par], $pos_lletra);
+					if ($num_par < 6) {	
+						$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+					}
 
 					$num_par += 1;
 					$seguir = false;
