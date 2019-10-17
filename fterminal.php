@@ -113,6 +113,8 @@
 		$tros2;
 		$tros3;
 		$num_par = 0;
+		$count_id_span = 1;
+		$id_span = "span".strval($count_id_span);
 		for ($i=0; $i<34; $i++) {
 			$tros = substr($volcado, $posInici, $longitud_str);
 			$intacte = true;
@@ -125,11 +127,11 @@
 
 					$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array[$num_par], $pos_lletra);
 
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
-
 					$num_par += 1;
 					$seguir = false;
 					$substitucio = true;
+					$count_id_span += 1;
+					$id_span = "span".strval($count_id_span);
 				}; 
 			};
 			if(!$substitucio) {
@@ -154,9 +156,9 @@
 			echo "$direction1</th>";
 			echo '<th class="column2">';
 			echo "$cachos[$i]</th>";
-			echo '<th class="column1">';
+			echo '<th class="column4">';
 			echo "$direction2</th>";
-			echo '<th class="column2">';
+			echo '<th class="column5">';
 			echo "$cachos2[$i]</th>";
 			if ($i == 0) {
 

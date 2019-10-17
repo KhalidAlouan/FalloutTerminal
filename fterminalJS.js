@@ -42,7 +42,8 @@ function intents(nombre_intents) {
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
-		document.getElementById("intentsRestants").textContent  = "0"; 
+		document.getElementById("intentsRestants").textContent  = "0";
+
 	}
 }
 
@@ -87,6 +88,15 @@ function prova2(paraula) {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
 			seguir = false;
 		}
+	}
+	final();
+}
+
+function final() {
+	if (nombre_intents == 0) {
+		document.getElementById("prompt").innerHTML += "> MAXIMUM INTENTS<br/>";
+		document.getElementById("prompt").innerHTML += "> NUMBER EXCEED!<br/>";
+		seguir = false;
 	}
 }
 
