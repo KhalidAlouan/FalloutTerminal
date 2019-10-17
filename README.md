@@ -1,6 +1,6 @@
 # FalloutTerminal
 
-**Como Instalar el programa:**
+**Como Instalar el FalloutTerminal:**
 * *Ubuntu:*
 Primero descargamos el archivo comprimido de la release y luego lo descomprimimos /var/www/html.
 
