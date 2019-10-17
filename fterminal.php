@@ -50,7 +50,7 @@
 		
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$random_pos = 0;
-		$choosen_word_array_leng = count($choosen_word_array);7
+		$choosen_word_array_leng = count($choosen_word_array);
 		$choosen_word_array_ordened = [];
 		for ($i=0;$i<$choosen_word_array_leng;$i++) {
 			$l = 0;
@@ -76,6 +76,7 @@
 				$i = $i-1;
 			}
 		}
+
 	
 		$aleatori = random_int(0, 5);
 		$password = $choosen_word_array[$aleatori];
