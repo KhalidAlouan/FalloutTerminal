@@ -63,7 +63,7 @@ function comprovar(element){
 	
 	
 	if (element.textContent!=password) {
-			intents(atp-i);
+			intents(atp-1);
 	}	
 	
 }
