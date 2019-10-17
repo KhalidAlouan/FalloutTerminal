@@ -186,38 +186,3 @@
 
 </body>
 </html>
-
-<?php
-	/**
-					//substr_replace ($tros , "<span>" , $pos_lletra); 
-					$tros2 = "";
-					$tros3 = "";
-					$tros4 = "";
-					$cont = 0;
-					//foreach ($tros as $lletra2) {
-					for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i < intval($pos_lletra)) {
-							$tros2 = $tros2.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros2 = $tros2.'<span>';
-					/**for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i > intval($pos_lletra)) {
-							$tros3 = $tros3.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros3 = $tros3.'</span>';*/
-					/**
-					$tros4 = $tros2.'</span>';
-					//$pos_lletra = strpos($tros, $lletra);
-					//$pos_final = $pos_lletra+5;
-					//substr_replace ($tros , "<span>" , $pos_final); 
-					//substr_replace ($tros , "</span>" , $pos_final);
-					$tros = "<span>".$tros."</span>";
-					//echo "<h4>$tros4</h4><br>";
-					$intacte = false;*/
-?>
