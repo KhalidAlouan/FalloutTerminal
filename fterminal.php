@@ -50,8 +50,9 @@
 		
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$random_pos = 0;
-		$choosen_word_array_leng = count($choosen_word_array);
-		for ($i=0;$i<$choosen_word_array_leng;$i++){
+		$choosen_word_array_leng = count($choosen_word_array);7
+		$choosen_word_array_ordened = [];
+		for ($i=0;$i<$choosen_word_array_leng;$i++) {
 			$l = 0;
 			$not_special_char = 0;
 			$leng_word = strlen($choosen_word_array[$i]);
@@ -64,9 +65,12 @@
 				
 			}
 			$word = $choosen_word_array[$i];
+			 
+
 			if ($not_special_char == 0) {
 				//$volcado = substr_replace($volcado, "<span onclick=comprovar();comprovarParaula() id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
 				$volcado = substr_replace($volcado, $word, $random_pos,$leng_word);
+				array_push($choosen_word_array_ordened, $word);
 				$l = $l + 1;
 			}else{
 				$i = $i-1;
