@@ -1,0 +1,150 @@
+* {
+  font-size: 1.2vw;
+  font-style: Courier New;
+}
+
+h4 { 
+  display:inline; 
+}
+
+#password {
+  display: none;
+}
+
+body {
+	background-image: url("terminal.jpg");
+	background-size: cover;                      
+    background-repeat: no-repeat;
+   
+}
+
+#box1 {
+  position: absolute;
+ 	height: 80%;
+ 	width: 50%;
+ 	background-image: url("centre_terminal.png");
+ 	background-size: contain;                    
+  background-repeat: no-repeat; 
+ 	position: absolute;
+ 	padding-top: 1.5%;
+ 	padding-left: 1%;
+ 	left: 24vw;
+ 	top: 8vw;
+ 	color: #088A08;
+}
+
+#box2 {
+	background-color: transparent;
+	padding: 5%;
+}
+
+#table1 {	
+	color: #088A08;
+	align: left;
+	table-layout: fixed;
+	width: 100%;
+	display: flex;
+  flex-flow: row wrap;
+  white-space: nowrap;
+}
+
+#intents {
+	font-weight: bold;
+}
+
+
+th.column1 {
+	width: 10%;
+	padding: 0;
+}
+
+th.column2 {
+	width: 25%;
+	padding: 0;
+}
+
+.column3 {
+  vertical-align: top;
+}
+
+#titolIntents {
+	width: 40%;
+}
+
+#barraProgres {
+	width: 20%;
+}
+
+#progressbar>div {
+  background-color:  #088A08;
+  width: 25%;
+  height: 15px;
+  border-right: 2px solid black;
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 2%;
+}
+progress::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 2%;
+}
+progress::-webkit-progress-value {
+ -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 2%;
+} 
+progress::-moz-progress-bar {
+ -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 2%;
+}
+
+h4 {
+	padding: 2px;
+	margin: 0px;
+}
+
+
+
+
+
+
+span:hover {
+
+	color: black;
+	background-color: #088A08;
+}
+
+
+@media only screen and (max-width: 1280px) {
+
+   *{ 
+      font-size: 1vw; 
+   }
+
+}
+
