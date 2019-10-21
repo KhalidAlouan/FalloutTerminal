@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
 <body>
+
 	<?php
+		echo "<label id='min'>00</label>:<label id='sec'>00</label>";
 		define ('total_char','408');
 		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -51,7 +53,8 @@
 		$id_span = array('wfirst','wsecond','wthird','wfourth','wfifth','wsixth');
 		$random_pos = 0;
 		$choosen_word_array_leng = count($choosen_word_array);
-		for ($i=0;$i<$choosen_word_array_leng;$i++){
+		$choosen_word_array_ordened = [];
+		for ($i=0;$i<$choosen_word_array_leng;$i++) {
 			$l = 0;
 			$not_special_char = 0;
 			$leng_word = strlen($choosen_word_array[$i]);
@@ -64,14 +67,18 @@
 				
 			}
 			$word = $choosen_word_array[$i];
+			 
+
 			if ($not_special_char == 0) {
 				//$volcado = substr_replace($volcado, "<span onclick=comprovar();comprovarParaula() id='".$id_span[$l]."'>".$word."</span>", $random_pos,$leng_word);
 				$volcado = substr_replace($volcado, $word, $random_pos,$leng_word);
+				array_push($choosen_word_array_ordened, $word);
 				$l = $l + 1;
 			}else{
 				$i = $i-1;
 			}
 		}
+
 	
 		$aleatori = random_int(0, 5);
 		$password = $choosen_word_array[$aleatori];
@@ -95,14 +102,15 @@
 		echo '<table id="table1">';
 		echo '<tbody>';
 
+		//echo $volcado;
 		//Llistes amb el volcat a pujar.
 		//echo $volcado;
 		//$choosen_word_array[]
 		$inicial_paraules = array();
 		$final_paraules = array();
 		for ($i=0; $i<6; $i++) {
-			array_push($inicial_paraules, $choosen_word_array[$i][0]);
-			array_push($final_paraules, $choosen_word_array[$i][4]);
+			array_push($inicial_paraules, $choosen_word_array_ordened[$i][0]);
+			array_push($final_paraules, $choosen_word_array_ordened[$i][4]);
 		}
 		//var_dump($inicial_paraules);
 		// Llistes amb el volcat a pujar.
@@ -113,6 +121,8 @@
 		$tros2;
 		$tros3;
 		$num_par = 0;
+		$count_id_span = 1;
+		$id_span = "span".strval($count_id_span);
 		for ($i=0; $i<34; $i++) {
 			$tros = substr($volcado, $posInici, $longitud_str);
 			$intacte = true;
@@ -123,13 +133,21 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
+
 					
 
 					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 
+					if ($num_par < 6) {	
+						$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+					}
+
+
 					$num_par += 1;
 					$seguir = false;
 					$substitucio = true;
+					$count_id_span += 1;
+					$id_span = "span".strval($count_id_span);
 				}; 
 			};
 			if(!$substitucio) {
@@ -154,9 +172,9 @@
 			echo "$direction1</th>";
 			echo '<th class="column2">';
 			echo "$cachos[$i]</th>";
-			echo '<th class="column1">';
+			echo '<th class="column4">';
 			echo "$direction2</th>";
-			echo '<th class="column2">';
+			echo '<th class="column5">';
 			echo "$cachos2[$i]</th>";
 			if ($i == 0) {
 
@@ -179,38 +197,3 @@
 
 </body>
 </html>
-
-<?php
-	/**
-					//substr_replace ($tros , "<span>" , $pos_lletra); 
-					$tros2 = "";
-					$tros3 = "";
-					$tros4 = "";
-					$cont = 0;
-					//foreach ($tros as $lletra2) {
-					for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i < intval($pos_lletra)) {
-							$tros2 = $tros2.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros2 = $tros2.'<span>';
-					/**for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i > intval($pos_lletra)) {
-							$tros3 = $tros3.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros3 = $tros3.'</span>';*/
-					/**
-					$tros4 = $tros2.'</span>';
-					//$pos_lletra = strpos($tros, $lletra);
-					//$pos_final = $pos_lletra+5;
-					//substr_replace ($tros , "<span>" , $pos_final); 
-					//substr_replace ($tros , "</span>" , $pos_final);
-					$tros = "<span>".$tros."</span>";
-					//echo "<h4>$tros4</h4><br>";
-					$intacte = false;*/
-?>

@@ -55,13 +55,25 @@ body {
 
 th.column1 {
 	width: 10%;
-	padding: 0;
+	padding-left: 0;
   text-align: left;
 }
 
 th.column2 {
 	width: 25%;
-	padding-left: 3%;
+	padding-left: 0%;
+  text-align: left;
+}
+
+th.column4 {
+  width: 25%;
+  padding-left: 5%;
+  text-align: left;
+}
+
+th.column5 {
+  width: 25%;
+  padding-left: 8%;
   text-align: left;
 }
 
@@ -69,7 +81,7 @@ th.column2 {
   vertical-align: top;
   align-content: left;
   text-align: left;
-  padding-left: 3%;
+  padding-left: 10%;
 }
 
 #titolIntents {
@@ -153,3 +165,12 @@ span:hover {
 
 }
 
+#min{
+  padding-left: 45%;
+  color: white;
+}
+
+#sec{ 
+  padding-right: 45%;
+  color:white;
+}

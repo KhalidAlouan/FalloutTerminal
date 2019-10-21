@@ -43,10 +43,12 @@ function intents(nombre_intents) {
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
 		document.getElementById("intentsRestants").textContent  = "0";
-
-
 	}
 }
+
+
+
+
 
 
 
@@ -75,9 +77,19 @@ function prova2(paraula) {
 
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
+			stopCount()
 			seguir = false;
 			
 		}
+	}
+	final();
+}
+
+function final() {
+	if (nombre_intents == 0) {
+		document.getElementById("prompt").innerHTML += "> MAXIMUM INTENTS<br/>";
+		document.getElementById("prompt").innerHTML += "> NUMBER EXCEED!<br/>";
+		seguir = false;
 	}
 }
 
@@ -110,3 +122,32 @@ function comprovar(element){
 }
 
 
+var totalSeconds = 0;
+f=0;
+window.onload = function() {
+	var minutesLabel = document.getElementById("min");
+	var secondsLabel = document.getElementById("sec");
+	
+
+	f=setInterval(setTime, 1000);
+
+	function setTime() {
+  		++totalSeconds;
+  		secondsLabel.innerHTML = pad(totalSeconds % 60);
+  		minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+	}
+
+	function pad(val) {
+  		var valString = val + "";
+  		if (valString.length < 2) {
+    		return "0" + valString;
+  		} else {
+    		return valString;
+  		}
+	}
+	
+};
+function stopCount() {
+	  clearTimeout(f);
+	  
+}
