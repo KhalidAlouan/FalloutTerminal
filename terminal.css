@@ -3,6 +3,8 @@
   font-family: "Courier New", monospace;
 }
 
+
+
 p {
   display: inline;
 }
@@ -35,7 +37,7 @@ h4 {
 body {
 	background-image: url("terminal.jpg");
 	background-size: cover;                      
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
    
 }
 
@@ -166,11 +168,6 @@ h4 {
 	margin: 0px;
 }
 
-
-
-
-
-
 span:hover {
 
 	color: black;
@@ -194,4 +191,39 @@ span:hover {
 #sec{ 
   padding-right: 45%;
   color:white;
+}
+
+
+label {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+}
+
+#min {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#sec {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#marcador {
+  position: absolute;
+  top: 6%;
+  left: 45%;
+  height: 4%;
+  width: 6%;
+  text-align: center;
+  background-color: #088A08;
+  border-radius: 25%;
+  font-size: 1.5vw;
+  color: black;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
 }

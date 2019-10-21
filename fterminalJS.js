@@ -48,10 +48,6 @@ function intents(nombre_intents) {
 
 
 
-
-
-
-
 var content, contentInicial;
 
 function mostra(obj) {
