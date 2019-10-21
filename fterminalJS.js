@@ -65,21 +65,22 @@ function comprovar(element){
 }
 
 
-var content;
-
+var content, contentInicial;
 
 function mostra(obj) {
 	if (seguir) {
-		content = document.getElementById("prompt").innerHTML;
-		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		contentInicial = document.getElementById("prompt").innerHTML;
+		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML; 
+		content = document.getElementById("prompt").innerHTML + "<br/>";
+		document.getElementById("prompt").innerHTML += '<span class="symbpr">&#9646;</span><br/>';
 	}
 }
 
 
 function esborra(obj) {
 	if (seguir) {
+		content = contentInicial;
 		document.getElementById("prompt").innerHTML = content;
-		content = document.getElementById("prompt").innerHTML;
 	}
 }
 
@@ -90,8 +91,9 @@ function esborra(obj) {
 function prova(obj) {
 	if (seguir) {
 		//document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		document.getElementById("prompt").innerHTML = content;
 		var paraula = String(obj.innerHTML);
-		content = document.getElementById("prompt").innerHTML;
+		//content = document.getElementById("prompt").innerHTML;
 		prova2(paraula);
 	}
 }
@@ -105,10 +107,12 @@ function prova2(paraula) {
 			intents(nombre_intents);
 			document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
 			content = document.getElementById("prompt").innerHTML;
+			contentInicial = content;
 			coincidencia(contra, paraula);
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
 			content = document.getElementById("prompt").innerHTML;
+			contentInicial = content;
 			seguir = false;
 		}
 	}
@@ -133,15 +137,14 @@ function coincidencia(contra, par) {
 	}
 	document.getElementById("prompt").innerHTML += "> " + num_coincidencias + "/5<br>";
 	content = document.getElementById("prompt").innerHTML;
+	contentInicial = content;
 }
 
 
 function wordSelected(element){
 	
-	
 	var password = document.getElementById("password");
 	var palabra= document.getElementsByTagName("span");
-	
 	
 	document.getElementsByClassName("column3")[0].innerHTML+= element.textContent+"<br></br>";
 		
