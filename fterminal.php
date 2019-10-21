@@ -136,7 +136,7 @@
 
 					
 
-					$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
+					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 
 					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);

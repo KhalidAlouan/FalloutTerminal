@@ -144,7 +144,7 @@ function comprovar(element){
 	element.innerHTML=".....";
 	element.style.backgroundColor="black";
 	element.style.color="green";
-
+}
 
 
 var totalSeconds = 0;
