@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 </head>
 <body>
+
 	<?php
+		echo "<label id='min'>00</label>:<label id='sec'>00</label>";
 		define ('total_char','408');
 		$special_char = array( '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -100,6 +102,7 @@
 		echo '<table id="table1">';
 		echo '<tbody>';
 
+		//echo $volcado;
 		//Llistes amb el volcat a pujar.
 		//echo $volcado;
 		//$choosen_word_array[]
@@ -118,6 +121,8 @@
 		$tros2;
 		$tros3;
 		$num_par = 0;
+		$count_id_span = 1;
+		$id_span = "span".strval($count_id_span);
 		for ($i=0; $i<34; $i++) {
 			$tros = substr($volcado, $posInici, $longitud_str);
 			$intacte = true;
@@ -128,13 +133,27 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
+<<<<<<< HEAD
 					if ($num_par<6){
 						$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+					}
+=======
+
+					
+
+					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
+>>>>>>> 5bef1e28d0cbddb15b4a8b8094a75b8afa246a39
+
+					if ($num_par < 6) {	
+						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+
 					}
 
 					$num_par += 1;
 					$seguir = false;
 					$substitucio = true;
+					$count_id_span += 1;
+					$id_span = "span".strval($count_id_span);
 				}; 
 			};
 			if(!$substitucio) {
@@ -159,9 +178,9 @@
 			echo "$direction1</th>";
 			echo '<th class="column2">';
 			echo "$cachos[$i]</th>";
-			echo '<th class="column1">';
+			echo '<th class="column4">';
 			echo "$direction2</th>";
-			echo '<th class="column2">';
+			echo '<th class="column5">';
 			echo "$cachos2[$i]</th>";
 			if ($i == 0) {
 
@@ -173,12 +192,13 @@
 			}
 			echo '</tr>';
 		}
-		echo '</tbody>';
-		echo '</table>';
-		echo "</div>";
-		echo "</div>";
-	
 	?>
+	</tbody>
+	</table>
+	</div>
+	</div>
+	
+	
 
 	
 

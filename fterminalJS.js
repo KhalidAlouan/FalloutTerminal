@@ -42,34 +42,45 @@ function intents(nombre_intents) {
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
-		document.getElementById("intentsRestants").textContent  = "0"; 
+		document.getElementById("intentsRestants").textContent  = "0";
 	}
 }
 
 
 
-var atp=5;
 
 
-function comprovar(element){
-	var p=document.getElementById("p");
-	var password=document.getElementById("password").value;
-	var palabras=document.getElementsByTagName("span");
-	
-	
-	if (element.textContent!=password) {
-			intents(atp-i);
-	}	
-	
+
+
+var content, contentInicial;
+
+function mostra(obj) {
+	if (seguir) {
+		contentInicial = document.getElementById("prompt").innerHTML;
+		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML; 
+		content = document.getElementById("prompt").innerHTML + "<br/>";
+		document.getElementById("prompt").innerHTML += '<span class="symbpr">&#9646;</span><br/>';
+	}
 }
+
+
+function esborra(obj) {
+	if (seguir) {
+		content = contentInicial;
+		document.getElementById("prompt").innerHTML = content;
+	}
+}
+
 
 
 
 
 function prova(obj) {
 	if (seguir) {
-		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		//document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		document.getElementById("prompt").innerHTML = content;
 		var paraula = String(obj.innerHTML);
+		//content = document.getElementById("prompt").innerHTML;
 		prova2(paraula);
 	}
 }
@@ -77,16 +88,35 @@ function prova(obj) {
 var seguir = true;
 function prova2(paraula) {
 	var contra = String(document.getElementById("password").innerHTML);
+	var sp=document.getElementsByTagName("span");
 	if (seguir) {
 		if (contra != paraula) {
 			nombre_intents -= 1;
 			intents(nombre_intents);
 			document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
+			content = document.getElementById("prompt").innerHTML;
+			contentInicial = content;
 			coincidencia(contra, paraula);
+			
+
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
+			stopCount()
+			content = document.getElementById("prompt").innerHTML;
+			contentInicial = content;
 			seguir = false;
+			
 		}
+	}
+	final();
+}
+
+function final() {
+	if (nombre_intents == 0) {
+		document.getElementById("prompt").innerHTML += "> MAXIMUM INTENTS<br/>";
+		document.getElementById("prompt").innerHTML += "> NUMBER EXCEED!<br/>";
+		content = document.getElementById("prompt").innerHTML;
+		seguir = false;
 	}
 }
 
@@ -98,17 +128,51 @@ function coincidencia(contra, par) {
 		}
 	}
 	document.getElementById("prompt").innerHTML += "> " + num_coincidencias + "/5<br>";
+	content = document.getElementById("prompt").innerHTML;
+	contentInicial = content;
+}
+
+function pr(paraula){
+	paraula.innerHTML=".....";
 }
 
 
-function wordSelected(element){
-	
-	
-	var password = document.getElementById("password");
-	var palabra= document.getElementsByTagName("span");
-	
-	
-	document.getElementsByClassName("column3")[0].innerHTML+= element.textContent+"<br></br>";
-		
+function comprovar(element){
+	var palabras=document.getElementsByTagName("span");
+
+	element.setAttribute("onclick","");
+	element.innerHTML=".....";
+	element.style.backgroundColor="black";
+	element.style.color="green";
 }
 
+
+var totalSeconds = 0;
+f=0;
+window.onload = function() {
+	var minutesLabel = document.getElementById("min");
+	var secondsLabel = document.getElementById("sec");
+	
+
+	f=setInterval(setTime, 1000);
+
+	function setTime() {
+  		++totalSeconds;
+  		secondsLabel.innerHTML = pad(totalSeconds % 60);
+  		minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+	}
+
+	function pad(val) {
+  		var valString = val + "";
+  		if (valString.length < 2) {
+    		return "0" + valString;
+  		} else {
+    		return valString;
+  		}
+	}
+	
+};
+function stopCount() {
+	  clearTimeout(f);
+	  
+}
