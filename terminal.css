@@ -3,6 +3,27 @@
   font-family: "Courier New", monospace;
 }
 
+p {
+  display: inline;
+}
+
+.symbpr {
+  animation: blinker 0.3s infinite;
+  display: inline;
+  height: 1px;
+  font-size:20px;
+  transform: scale(.5, 1);
+}
+
+@keyframes blinker{
+    0%{     color: #088A08;    }
+    49%{    color: black; }
+    50%{    color: black; }
+    99%{    color: black;  }
+    100%{   color: #088A08;    }
+}
+
+
 h4 { 
   display:inline; 
 }
