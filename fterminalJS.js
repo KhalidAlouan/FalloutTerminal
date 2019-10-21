@@ -42,26 +42,12 @@ function intents(nombre_intents) {
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
-		document.getElementById("intentsRestants").textContent  = "0"; 
+		document.getElementById("intentsRestants").textContent  = "0";
+
+
 	}
 }
 
-
-
-var atp=5;
-
-
-function comprovar(element){
-	var p=document.getElementById("p");
-	var password=document.getElementById("password").value;
-	var palabras=document.getElementsByTagName("span");
-	
-	
-	if (element.textContent!=password) {
-			intents(atp-i);
-	}	
-	
-}
 
 
 
@@ -77,15 +63,20 @@ function prova(obj) {
 var seguir = true;
 function prova2(paraula) {
 	var contra = String(document.getElementById("password").innerHTML);
+	var sp=document.getElementsByTagName("span");
 	if (seguir) {
 		if (contra != paraula) {
 			nombre_intents -= 1;
 			intents(nombre_intents);
 			document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
+			pr(paraula);
 			coincidencia(contra, paraula);
+			
+
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
 			seguir = false;
+			
 		}
 	}
 }
@@ -100,15 +91,22 @@ function coincidencia(contra, par) {
 	document.getElementById("prompt").innerHTML += "> " + num_coincidencias + "/5<br>";
 }
 
-
-function wordSelected(element){
-	
-	
-	var password = document.getElementById("password");
-	var palabra= document.getElementsByTagName("span");
-	
-	
-	document.getElementsByClassName("column3")[0].innerHTML+= element.textContent+"<br></br>";
-		
+function pr(paraula){
+	paraula.innerHTML=".....";
 }
+
+
+
+
+
+
+function comprovar(element){
+	var palabras=document.getElementsByTagName("span");
+
+	element.setAttribute("onclick","");
+	element.innerHTML=".....";
+	element.style.backgroundColor="black";
+	element.style.color="green";
+}
+
 

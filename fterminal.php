@@ -123,7 +123,7 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array[$num_par], $pos_lletra);
+					
 
 					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 
