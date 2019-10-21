@@ -63,7 +63,7 @@ body {
 
 #table1 {	
 	color: #088A08;
-	align: left;
+	text-align: left;
 	table-layout: fixed;
 	width: 100%;
 	display: flex;
@@ -76,6 +76,7 @@ body {
 }
 
 
+}
 th.column1 {
 	width: 10%;
 	padding-left: 0;

@@ -1,0 +1,49 @@
+* {
+  font-size: 1.1vw;
+  font-family: "Courier New", monospace;
+
+}
+
+body  {
+  background-image: url("bgMenuTermianl.jpg");
+  background-size: cover;                      
+  background-repeat: no-repeat;
+}
+
+#options {
+	margin-left: 40%;
+	margin-right: 40%;
+	margin-top: 23%;
+
+
+}
+
+.butn {
+	width: 30%;
+  	background: #15c22c;
+  	background-image: -webkit-linear-gradient(top, #15c22c, #15c22c);
+  	background-image: -moz-linear-gradient(top, #15c22c, #15c22c);
+  	background-image: -ms-linear-gradient(top, #15c22c, #15c22c);
+  	background-image: -o-linear-gradient(top, #15c22c, #15c22c);
+ 	background-image: linear-gradient(to bottom, #15c22c, #15c22c);
+  	-webkit-border-radius: 13;
+  	-moz-border-radius: 13;
+  	border-radius: 13px;
+  	font-weight: bold;
+  	color: #fff;
+  	padding: 10px 20px 10px 5px;
+  	border: solid #15c22c 2px;
+  	text-decoration: none;
+}
+
+.butn:hover {
+  	background: #059e00;
+  	background-image: -webkit-linear-gradient(top, #059e00, #059e00);
+  	background-image: -moz-linear-gradient(top, #059e00, #059e00);
+  	background-image: -ms-linear-gradient(top, #059e00, #059e00);
+  	background-image: -o-linear-gradient(top, #059e00, #059e00);
+  	background-image: linear-gradient(to bottom, #059e00, #059e00);
+  	border: solid #059e00 2px;
+  	text-decoration: none;
+}
+

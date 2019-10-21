@@ -15,7 +15,7 @@
 	<?php
 		
 		define ('total_char','408');
-		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
+		$special_char = array( '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
 								'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 		$volcado = "";
@@ -136,11 +136,16 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
+					if ($num_par<6){
+						$tros3 = substr_replace($tros2, '<span onclick="prova(this);comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+					}
+
 
 					
 					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 					}
+
 
 					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
