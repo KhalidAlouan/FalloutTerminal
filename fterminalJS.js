@@ -65,12 +65,33 @@ function comprovar(element){
 }
 
 
+var content;
+
+
+function mostra(obj) {
+	if (seguir) {
+		content = document.getElementById("prompt").innerHTML;
+		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+	}
+}
+
+
+function esborra(obj) {
+	if (seguir) {
+		document.getElementById("prompt").innerHTML = content;
+		content = document.getElementById("prompt").innerHTML;
+	}
+}
+
+
+
 
 
 function prova(obj) {
 	if (seguir) {
-		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
+		//document.getElementById("prompt").innerHTML += "> " + obj.innerHTML + "<br/>";
 		var paraula = String(obj.innerHTML);
+		content = document.getElementById("prompt").innerHTML;
 		prova2(paraula);
 	}
 }
@@ -83,9 +104,11 @@ function prova2(paraula) {
 			nombre_intents -= 1;
 			intents(nombre_intents);
 			document.getElementById("prompt").innerHTML += "> ENTRY DENIED <br>";
+			content = document.getElementById("prompt").innerHTML;
 			coincidencia(contra, paraula);
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
+			content = document.getElementById("prompt").innerHTML;
 			seguir = false;
 		}
 	}
@@ -96,6 +119,7 @@ function final() {
 	if (nombre_intents == 0) {
 		document.getElementById("prompt").innerHTML += "> MAXIMUM INTENTS<br/>";
 		document.getElementById("prompt").innerHTML += "> NUMBER EXCEED!<br/>";
+		content = document.getElementById("prompt").innerHTML;
 		seguir = false;
 	}
 }
@@ -108,6 +132,7 @@ function coincidencia(contra, par) {
 		}
 	}
 	document.getElementById("prompt").innerHTML += "> " + num_coincidencias + "/5<br>";
+	content = document.getElementById("prompt").innerHTML;
 }
 
 

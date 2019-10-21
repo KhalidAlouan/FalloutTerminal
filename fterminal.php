@@ -132,7 +132,7 @@
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
 					if ($num_par < 6) {	
-						$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this);wordSelected();">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
 					}
 
 					$num_par += 1;
@@ -178,12 +178,13 @@
 			}
 			echo '</tr>';
 		}
-		echo '</tbody>';
-		echo '</table>';
-		echo "</div>";
-		echo "</div>";
-	
 	?>
+	</tbody>
+	</table>
+	</div>
+	</div>
+	
+	
 
 	
 
