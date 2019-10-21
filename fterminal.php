@@ -11,7 +11,7 @@
 <body>
 	<?php
 		define ('total_char','408');
-		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
+		$special_char = array( '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
 								'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 		$volcado = "";
@@ -106,8 +106,8 @@
 		$inicial_paraules = array();
 		$final_paraules = array();
 		for ($i=0; $i<6; $i++) {
-			array_push($inicial_paraules, $choosen_word_array[$i][0]);
-			array_push($final_paraules, $choosen_word_array[$i][4]);
+			array_push($inicial_paraules, $choosen_word_array_ordened[$i][0]);
+			array_push($final_paraules, $choosen_word_array_ordened[$i][4]);
 		}
 		//var_dump($inicial_paraules);
 		// Llistes amb el volcat a pujar.
@@ -128,9 +128,9 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array[$num_par], $pos_lletra);
-
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
+					if ($num_par<6){
+						$tros3 = substr_replace($tros2, '<span onclick="prova(this);wordSelected();">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
+					}
 
 					$num_par += 1;
 					$seguir = false;
@@ -184,38 +184,3 @@
 
 </body>
 </html>
-
-<?php
-	/**
-					//substr_replace ($tros , "<span>" , $pos_lletra); 
-					$tros2 = "";
-					$tros3 = "";
-					$tros4 = "";
-					$cont = 0;
-					//foreach ($tros as $lletra2) {
-					for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i < intval($pos_lletra)) {
-							$tros2 = $tros2.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros2 = $tros2.'<span>';
-					/**for ($i=0; $i < strlen($tros); $i++) {
-						$lletra2 = $tros[$i];
-						if($i > intval($pos_lletra)) {
-							$tros3 = $tros3.$lletra2;
-						}
-						//$cont += 1;
-					}
-					$tros3 = $tros3.'</span>';*/
-					/**
-					$tros4 = $tros2.'</span>';
-					//$pos_lletra = strpos($tros, $lletra);
-					//$pos_final = $pos_lletra+5;
-					//substr_replace ($tros , "<span>" , $pos_final); 
-					//substr_replace ($tros , "</span>" , $pos_final);
-					$tros = "<span>".$tros."</span>";
-					//echo "<h4>$tros4</h4><br>";
-					$intacte = false;*/
-?>

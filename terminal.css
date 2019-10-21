@@ -14,7 +14,7 @@ h4 {
 body {
 	background-image: url("terminal.jpg");
 	background-size: cover;                      
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
    
 }
 
@@ -40,7 +40,7 @@ body {
 
 #table1 {	
 	color: #088A08;
-	align: left;
+	text-align: left;
 	table-layout: fixed;
 	width: 100%;
 	display: flex;
@@ -53,6 +53,7 @@ body {
 }
 
 
+}
 th.column1 {
 	width: 10%;
 	padding: 0;
