@@ -23,7 +23,7 @@
 
 	<div id="options">
 		<input class="butn" type="submit" name="play" value="Jugar" onclick="window.location.href='./fterminal.php'">
-		<input class="butn" type="submit" name="seeRanking" value="Ranking" onclick="window.location.href='http://./ranking.php'">
+		<input class="butn" type="submit" name="seeRanking" value="Ranking" onclick="window.location.href='./ranking.php'">
 	</div>
 
 </body>
