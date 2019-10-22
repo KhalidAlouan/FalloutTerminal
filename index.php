@@ -7,8 +7,8 @@
 </head>
 <body>
 	<div id="options">
-		<input class=butn type="submit" name="play" value="Jugar" onclick="window.location.href='http://localhost/FalloutTerminal/fterminal.php'">
-		<input class=butn type="submit" name="seeRanking" value="Ranking" onclick="window.location.href='http://localhost/FalloutTerminal/ranking.php'">
+		<input class="butn" type="submit" name="play" value="Jugar" onclick="window.location.href='./fterminal.php'">
+		<input class="butn" type="submit" name="seeRanking" value="Ranking" onclick="window.location.href='http://./ranking.php'">
 	</div>
 
 </body>

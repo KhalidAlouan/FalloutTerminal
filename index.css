@@ -18,6 +18,10 @@ body  {
 
 }
 
+input {
+  text-align: center;
+}
+
 .butn {
 	width: 30%;
   	background: #15c22c;
@@ -34,6 +38,7 @@ body  {
   	padding: 10px 20px 10px 5px;
   	border: solid #15c22c 2px;
   	text-decoration: none;
+    text-align: center;
 }
 
 .butn:hover {
