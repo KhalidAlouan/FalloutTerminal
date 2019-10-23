@@ -20,7 +20,6 @@ h4 {
 
 body {
 	background-image: url("terminal.jpg");
-<<<<<<< HEAD
 	background-size:cover;                      
   background-repeat: no-repeat;
 
@@ -44,7 +43,7 @@ body {
   animation: gradientBG 3s ease infinite ;
   animation-delay: 3s;
 }*/
-#divAnimado{}
+
 
 /*#efectDos {
   overflow: hidden;
@@ -62,25 +61,9 @@ body {
 }*/
  
 
-#efectTres:before {
-  overflow: hidden;
-  position : absolute;
-  top : 0px;
-  left : 0px;
-  bottom : -10px;
-  right : -10px;
-  padding : 40px;
-  overflow : hidden;
-  z-index : 1;
-  border-radius : 20px;
-  box-shadow : inset 0px 0px 5px 5px rgba(255, 255, 255, .1);
-  opacity : .1;
-=======
-	background-size: cover;                      
-  background-repeat: no-repeat;
+
    
->>>>>>> b94d291ac9e6d939b49349147f7003178576d0ce
-}
+
 
   #efectTres:after {
     content : '';
