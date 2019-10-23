@@ -43,12 +43,9 @@ function intents(nombre_intents) {
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
 		document.getElementById("intentsRestants").textContent  = "0";
+		redirect();
 	}
 }
-
-
-
-
 
 
 
@@ -97,19 +94,31 @@ function prova2(paraula) {
 			content = document.getElementById("prompt").innerHTML;
 			contentInicial = content;
 			coincidencia(contra, paraula);
-			
-
 		} else {
 			document.getElementById("prompt").innerHTML += "> SYSTEM ENTERED <br>";
 			stopCount()
 			content = document.getElementById("prompt").innerHTML;
 			contentInicial = content;
 			seguir = false;
-			
+			setTimeout(redirect, 5000);
+
 		}
 	}
 	final();
 }
+
+
+function redirect() {
+	var varSec = document.getElementById("sec").innerHTML;
+	var varMin = document.getElementById("min").innerHTML;
+	if (nombre_intents==0) {
+		window.location.href = "loseVaultBoy.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+	}else{
+		window.location.href = "win.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+	}
+	
+}
+
 
 function final() {
 	if (nombre_intents == 0) {
@@ -138,12 +147,14 @@ function pr(paraula){
 
 
 function comprovar(element){
-	var palabras=document.getElementsByTagName("span");
+	if (seguir) {
+		var palabras=document.getElementsByTagName("span");
 
-	element.setAttribute("onclick","");
-	element.innerHTML=".....";
-	element.style.backgroundColor="black";
-	element.style.color="green";
+		element.setAttribute("onclick","");
+		element.innerHTML=".....";
+		element.style.backgroundColor="black";
+		element.style.color="green";
+	}
 }
 
 
@@ -175,4 +186,14 @@ window.onload = function() {
 function stopCount() {
 	  clearTimeout(f);
 	  
+}
+
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
 }

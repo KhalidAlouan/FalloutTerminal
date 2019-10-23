@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +14,13 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 </head>
 <body>
-
+	<div id="marcador" align="center">
+		<label id="min">00</label><label>:</label><label id="sec">00</label>
+	</div>
 	<?php
-		echo "<label id='min'>00</label>:<label id='sec'>00</label>";
+		
 		define ('total_char','408');
-		$special_char = array('!' , '"' , '$' , '%' , '&' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '>', '{' , ']' , '[' , '}');
+		$special_char = array( '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
 								'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
 		$volcado = "";
@@ -87,6 +93,7 @@
 		// Mostrem les paraules per pantalla.
 		echo '<div id="box0">';
 		echo '<div id="box1">';
+	
 		echo '<div id="box2">';
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
 									"0xF97C", "0xF988", "0xF994", "0xF9A0", "0xF9AC", "0xF9B8", "0xF9C4", "0xF9D0", "0xF9DC");
@@ -136,12 +143,14 @@
 					$pos_lletra = intval(strpos($tros, $lletra));
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
+							
 
-					if ($num_par < 6) {
+					
+					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 					}
 
-					
+
 
 					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);

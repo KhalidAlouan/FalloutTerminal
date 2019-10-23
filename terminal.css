@@ -3,6 +3,8 @@
   font-family: "Courier New", monospace;
 }
 
+
+
 p {
   display: inline;
 }
@@ -18,6 +20,7 @@ h4 {
 
 body {
 	background-image: url("terminal.jpg");
+<<<<<<< HEAD
 	background-size:cover;                      
   background-repeat: no-repeat;
 
@@ -72,6 +75,11 @@ body {
   border-radius : 20px;
   box-shadow : inset 0px 0px 5px 5px rgba(255, 255, 255, .1);
   opacity : .1;
+=======
+	background-size: cover;                      
+  background-repeat: no-repeat;
+   
+>>>>>>> b94d291ac9e6d939b49349147f7003178576d0ce
 }
 
   #efectTres:after {
@@ -155,7 +163,7 @@ body {
 
 #table1 {	
 	color: #088A08;
-	align: left;
+	text-align: left;
 	table-layout: fixed;
 	width: 100%;
 	display: flex;
@@ -168,6 +176,7 @@ body {
 }
 
 
+}
 th.column1 {
 	width: 10%;
 	padding-left: 0;
@@ -260,11 +269,6 @@ h4 {
 	margin: 0px;
 }
 
-
-
-
-
-
 span:hover {
 
 	color: black;
@@ -290,6 +294,7 @@ span:hover {
   color:white;
 }
 
+<<<<<<< HEAD
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -326,3 +331,39 @@ span:hover {
 
 
 </style>
+=======
+
+label {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+}
+
+#min {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#sec {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#marcador {
+  position: absolute;
+  top: 6%;
+  left: 45%;
+  height: 4%;
+  width: 6%;
+  text-align: center;
+  background-color: #088A08;
+  border-radius: 25%;
+  font-size: 1.5vw;
+  color: black;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+>>>>>>> b94d291ac9e6d939b49349147f7003178576d0ce
