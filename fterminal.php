@@ -6,7 +6,8 @@
 	<style type="text/css" src=""></style>
 	<script type="text/javascript" src="fterminalJS.js"></script>
     <link rel="stylesheet" type="text/css" href="terminal.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 </head>
 <body>
 
@@ -82,7 +83,9 @@
 	
 		$aleatori = random_int(0, 5);
 		$password = $choosen_word_array[$aleatori];
+		
 		// Mostrem les paraules per pantalla.
+		echo '<div id="box0">';
 		echo '<div id="box1">';
 		echo '<div id="box2">';
 		$arrayDirecciones1 = array("0xF91C", "0xF928", "0xF934", "0xF940", "0xF94C", "0xF958", "0xF964", "0xF970", 
@@ -134,9 +137,11 @@
 					$tros2 = substr_replace($tros, '</span>', $pos_lletra+5);
 
 
-					
+					if ($num_par < 6) {
+						$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
+					}
 
-					$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
+					
 
 					if ($num_par < 6) {	
 						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
@@ -191,6 +196,18 @@
 	</table>
 	</div>
 	</div>
+	</div>
+	<?php
+	echo "<div id='divAnimado'>";
+			echo "<div id='efectDos'>";
+			echo "</div>";
+			echo "<div id='efectTres'>";
+			echo "</div>";
+		echo "</div>";
+	?>
+	
+	
+
 	
 	
 
