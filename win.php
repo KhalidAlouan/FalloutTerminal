@@ -8,8 +8,6 @@
 </head>
 <body>
 
-
-
 	<div id="prim">
 
 	<h3>You won!!!</h3>
