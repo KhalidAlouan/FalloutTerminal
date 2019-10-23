@@ -43,6 +43,7 @@ function intents(nombre_intents) {
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
 		document.getElementById("progressFifth").setAttribute("hidden", "");
 		document.getElementById("intentsRestants").textContent  = "0";
+		redirect();
 	}
 }
 
@@ -110,7 +111,12 @@ function prova2(paraula) {
 function redirect() {
 	var varSec = document.getElementById("sec").innerHTML;
 	var varMin = document.getElementById("min").innerHTML;
-	window.location.href = "win.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+	if (nombre_intents==0) {
+		window.location.href = "loseVaultBoy.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+	}else{
+		window.location.href = "win.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+	}
+	
 }
 
 

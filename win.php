@@ -17,8 +17,7 @@
 		$mostrar = $_GET['w1'];
 		$min = $_GET['min'];
 		$sec = $_GET['sec'];
-		echo '<h4>Intents: ';
-		echo "$mostrar, $min, $sec";
+		echo "<h4>Temps: $min:$sec";
 		echo '</h4>';
 	?>
 	<h4>You must introduce the user name</h4> 
@@ -33,7 +32,7 @@
 
 	<div id="divImg">
 
-		<img src="win.gif" alt="Congratulations!">
+		<img src="https://media.giphy.com/media/SHT4S1lOyAbaa6UvQZ/giphy.gif" alt="Congratulations!">
 
 	</div>
 
