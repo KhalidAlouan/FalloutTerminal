@@ -8,7 +8,21 @@
 p {
   display: inline;
 }
+.symbpr {
+  animation: blinker 0.3s infinite;
+  display: inline;
+  height: 1px;
+  font-size:20px;
+  transform: scale(.5, 1);
+}
 
+@keyframes blinker{
+    0%{     color: #088A08;    }
+    49%{    color: black; }
+    50%{    color: black; }
+    99%{    color: black;  }
+    100%{   color: #088A08;    }
+}
 
 h4 { 
   display:inline; 
@@ -214,7 +228,7 @@ progress {
   border: 0;
   border-radius: 0px;
   width: 0;
-  min-width: 2%;
+  min-width: 3%;
 }
 progress::-webkit-progress-bar {
   -webkit-appearance: none;
@@ -224,7 +238,7 @@ progress::-webkit-progress-bar {
   border: 0;
   border-radius: 0px;
   width: 0;
-  min-width: 2%;
+  min-width: 3%;
 }
 progress::-webkit-progress-value {
  -webkit-appearance: none;
@@ -234,7 +248,7 @@ progress::-webkit-progress-value {
   border: 0;
   border-radius: 0px;
   width: 0;
-  min-width: 2%;
+  min-width: 3%;
 } 
 progress::-moz-progress-bar {
  -webkit-appearance: none;
@@ -244,7 +258,7 @@ progress::-moz-progress-bar {
   border: 0;
   border-radius: 0px;
   width: 0;
-  min-width: 2%;
+  min-width: 3%;
 }
 
 h4 {
@@ -277,7 +291,7 @@ span:hover {
   color:white;
 }
 
-<<<<<<< HEAD
+
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -313,8 +327,8 @@ span:hover {
 }
 
 
-</style>
-=======
+
+
 
 label {
   display: inline;
@@ -349,4 +363,5 @@ label {
   font-family: "Courier New", monospace;
   font-weight: bold;
 }
->>>>>>> b94d291ac9e6d939b49349147f7003178576d0ce
+
+</style>
