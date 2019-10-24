@@ -2,7 +2,7 @@ body  {
   background-image: url("bgMenuTermianl.jpg");
   background-size: cover;                      
   background-repeat: no-repeat;
-  color: #088A08;
+  color: #39FF14;
 }
 
 #rank {
@@ -11,8 +11,21 @@ body  {
 	padding-right: 2%;
 	position: absolute;
 	display: inline;
-	left: 30%;
-	top: 24%;
+	left: 35%;
+	top: 25%;
 	background-image: linear-gradient(to bottom right, black, transparent); 
+	box-shadow: 0 0 20px #39FF14;
 	border: 3px solid black;
+}
+#btnHome {
+	background-color: #088A08;
+	color: black;
+	border-radius: 10%;
+	border: 3px solid black;
+}
+
+#btnHome:hover {
+	background-color: black;
+	color: #39FF14;
+	border: 3px solid #39FF14;
 }

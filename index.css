@@ -36,7 +36,7 @@ input {
   	font-weight: bold;
   	color: #fff;
   	padding: 10px 20px 10px 5px;
-  	border: solid #15c22c 2px;
+  	border: solid black 2px;
   	text-decoration: none;
     text-align: center;
 }
@@ -48,7 +48,7 @@ input {
   	background-image: -ms-linear-gradient(top, #059e00, #059e00);
   	background-image: -o-linear-gradient(top, #059e00, #059e00);
   	background-image: linear-gradient(to bottom, #059e00, #059e00);
-  	border: solid #059e00 2px;
+  	border: solid #39FF14 2px;
   	text-decoration: none;
 }
 

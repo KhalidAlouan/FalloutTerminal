@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Ranking</title>
 	<link rel="stylesheet" type="text/css" href="ranking.css">
+	<script type="text/javascript" src="lose.js"></script>
 </head>
 <body>
 	<div id="rank">
@@ -26,7 +27,7 @@
 				}
 			}
 			fclose($fn);
-
+			echo '<input id="btnHome" type="button" value="Home" onclick="home()"></input>';
 		?>
 
 	</div>

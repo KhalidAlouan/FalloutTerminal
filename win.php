@@ -23,6 +23,7 @@
 	<input id="nomUsuari" type="text"></input>
 
 	<?php
+		echo '<input id="btnHome" type="button" value="Home" onclick="home()"></input>';
 		echo '<input id="btnSend" type="button" value="Send!" onclick="envia('.$mostrar.', '.$min.', '.$sec.');"></input><br/><br/><br/><br/>';
 	?>
 
