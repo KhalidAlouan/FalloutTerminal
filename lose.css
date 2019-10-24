@@ -1,0 +1,55 @@
+body {
+	color: #39FF14;
+	background-image: url("bgMenuTermianl.jpg");
+	background-size: cover;                      
+  	background-repeat: no-repeat;
+
+}
+
+img {
+
+	width: 90%;
+	height: 90%;
+	display: inline;
+}
+
+div {
+	display: inline;
+	float: left;
+	position: relative;
+}
+
+#prim {
+	box-shadow: 0 0 24px #39FF14;
+	position: absolute;
+	left: 25%;
+	top: 35%;
+	border: 4px solid black;
+	padding-left: 1%;
+	padding-right: 2%;
+	background-image: linear-gradient(to bottom right, black, transparent); 
+}
+
+#divImg {
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	padding-top: 3%;
+}
+
+h3, h4 {
+	background-color: transparent;
+}
+
+#btnHome {
+	background-color: #088A08;
+	color: black;
+	border-radius: 10%;
+	border: 3px solid black;
+}
+
+#btnHome:hover {
+	background-color: black;
+	color: #39FF14;
+	border: 3px solid #39FF14;
+}
