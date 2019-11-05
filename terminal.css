@@ -78,8 +78,7 @@ body {
 
    
 
-
-  #efectTres:after {
+#efectTres:after {
     content : '';
     position : absolute;
     top : 75px;
@@ -95,9 +94,7 @@ body {
     transition-delay: initial;
     left: 26vw;
     top: 8vw; 
-    
-
-  }
+}
   
 
 @keyframes scanning {
@@ -155,6 +152,7 @@ body {
 #box2 {
 	background-color: transparent;
 	padding: 5%;
+  width: 178%;
   
 }
 
@@ -179,7 +177,6 @@ th.column1 {
 	padding-left: 0;
   text-align: left;
 }
-
 th.column2 {
 	width: 25%;
 	padding-left: 0%;
@@ -198,11 +195,37 @@ th.column5 {
   text-align: left;
 }
 
+
+.divString{
+  width: 2%;
+
+}
 .column3 {
   vertical-align: top;
   align-content: left;
   text-align: left;
   padding-left: 10%;
+  
+  
+}
+table{
+  overflow: hidden;
+  white-space: nowrap;
+  /*margin:0 auto;*/
+  animation: escribir 2s steps(1000) ;
+
+}
+@keyframes escribir {
+    table{overflow: visible;}
+    from { width: 0%}
+    to { width:200% }
+}
+
+
+
+@keyframes blink-caret{
+  from, to{border-color: transparent;}
+  50% {border-color: transparent;}
 }
 
 #titolIntents {

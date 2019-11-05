@@ -1,47 +1,35 @@
-var nombre_intents = 5;
+var nombre_intents = 4;
 
 function intents(nombre_intents) {
-	if (nombre_intents == 5) {
-		document.getElementById("progressFirst").removeAttribute("hidden");
-		document.getElementById("progressSecond").removeAttribute("hidden");
-		document.getElementById("progressThird").removeAttribute("hidden");
-		document.getElementById("progressFourth").removeAttribute("hidden");
-		document.getElementById("progressFifth").removeAttribute("hidden"); 
-		document.getElementById("intentsRestants").textContent  = "5";
-	} else if (nombre_intents == 4) {
+	if (nombre_intents == 4) {
 		document.getElementById("progressFirst").removeAttribute("hidden"); 
 		document.getElementById("progressSecond").removeAttribute("hidden"); 
 		document.getElementById("progressThird").removeAttribute("hidden"); 
 		document.getElementById("progressFourth").removeAttribute("hidden");
-		document.getElementById("progressFifth").setAttribute("hidden", ""); 
 		document.getElementById("intentsRestants").textContent = "4";
 	} else if (nombre_intents == 3) {
 		document.getElementById("progressFirst").removeAttribute("hidden");
 		document.getElementById("progressSecond").removeAttribute("hidden");
 		document.getElementById("progressThird").removeAttribute("hidden");
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
-		document.getElementById("progressFifth").setAttribute("hidden", ""); 
 		document.getElementById("intentsRestants").textContent = "3";
 	} else if (nombre_intents == 2) {
 		document.getElementById("progressFirst").removeAttribute("hidden");
 		document.getElementById("progressSecond").removeAttribute("hidden");
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
-		document.getElementById("progressFifth").setAttribute("hidden", ""); 
 		document.getElementById("intentsRestants").textContent = "2";
 	} else if (nombre_intents == 1) {
 		document.getElementById("progressFirst").removeAttribute("hidden");
 		document.getElementById("progressSecond").setAttribute("hidden", ""); 
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
-		document.getElementById("progressFifth").setAttribute("hidden", ""); 
 		document.getElementById("intentsRestants").textContent  = "1";
 	} else if (nombre_intents == 0) {
 		document.getElementById("progressFirst").setAttribute("hidden", ""); 
 		document.getElementById("progressSecond").setAttribute("hidden", ""); 
 		document.getElementById("progressThird").setAttribute("hidden", ""); 
 		document.getElementById("progressFourth").setAttribute("hidden", ""); 
-		document.getElementById("progressFifth").setAttribute("hidden", "");
 		document.getElementById("intentsRestants").textContent  = "0";
 		redirect();
 	}
@@ -53,10 +41,12 @@ var content, contentInicial;
 
 function mostra(obj) {
 	if (seguir) {
+		var prom=document.getElementById("prom");
 		contentInicial = document.getElementById("prompt").innerHTML;
 		document.getElementById("prompt").innerHTML += "> " + obj.innerHTML; 
 		content = document.getElementById("prompt").innerHTML + "<br/>";
 		document.getElementById("prompt").innerHTML += '<span class="symbpr">&#9646;</span><br/>';
+		
 	}
 }
 
@@ -111,14 +101,14 @@ function prova2(paraula) {
 function redirect() {
 	var varSec = document.getElementById("sec").innerHTML;
 	var varMin = document.getElementById("min").innerHTML;
+
 	if (nombre_intents==0) {
 		window.location.href = "loseVaultBoy.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
 	}else{
-		window.location.href = "win.php?w1=" + nombre_intents + "&min=" + varMin + "&sec=" + varSec;
+		window.location.href = "win.php?w1=" + nombre_intents +"&min=" + varMin + "&sec=" + varSec;
 	}
 	
 }
-
 
 function final() {
 	if (nombre_intents == 0) {
@@ -196,4 +186,9 @@ function sleep(milliseconds) {
       break;
     }
   }
+}
+
+function easterEgg(){
+	var snd = new Audio("easterEgg.mp3");
+  	snd.play();
 }

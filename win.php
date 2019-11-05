@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +15,7 @@
 
 	<h3>You won!!!</h3>
 	<?php
+		
 		$mostrar = $_GET['w1'];
 		$min = $_GET['min'];
 		$sec = $_GET['sec'];
@@ -20,11 +24,26 @@
 	?>
 	<h4>You must introduce the user name</h4> 
 	<h4>for recording your position at the ranking.</h4>
-	<input id="nomUsuari" type="text"></input>
+	
+	<?php
+		echo "<form method='get' action='index.php'>";
+		echo "<input id='intentos' name='intentos' value='".$mostrar."' hidden>";
+		echo "<input id='min' name='min' value='".$min."' hidden>";
+		echo "<input id='sec' name='sec' value='".$sec."' hidden>";
+		echo "<input id='nomUsuari' name='nomUsuari' type='text' value='".$_SESSION['winInput']."'></input>";
+		
+		echo '<input type="submit" id="btnSend"  name="envia" value="Send!" ;"></input><br/><br/><br/><br/>';
+		echo "</form>";
+
+		
+		
+		
+	?>
 
 	<?php
-		echo '<input id="btnHome" type="button" value="Home" onclick="home()"></input>';
-		echo '<input id="btnSend" type="button" value="Send!" onclick="envia('.$mostrar.', '.$min.', '.$sec.');"></input><br/><br/><br/><br/>';
+		echo '<input id="btnHome" type="button"  value="Home" onclick="home()"></input>';
+		
+		
 	?>
 
 	</div>
