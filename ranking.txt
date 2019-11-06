@@ -1,12 +1,3 @@
 Prova;4;0;50;
 Prova;4;0;50;
 Khalid;4;0;2;
-holaaa;4;00;01;
-adioss;3;00;04;
-adiossDOS;3;00;11;
-paco;4;00;29;
-paco;4;00;29;
-lalalala;1;00;07;
-lalalala;1;00;07;
-lalalala;1;00;07;
-madmasmm;4;00;02;

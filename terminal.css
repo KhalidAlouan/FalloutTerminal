@@ -76,7 +76,9 @@ body {
  
 
 
-   
+select{
+  
+}
 
 #efectTres:after {
     content : '';

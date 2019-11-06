@@ -9,6 +9,17 @@
 <body>
 	<div id="rank">
 		<h3> RANKING ORDERED BY INTENTS </h3>
+		<script type="text/javascript">
+		function load() {
+			var ut=document.getElementsByClassName("ultimo");
+			for (var i = 0; i < ut.length; i++) {
+				if (i==ut.length-1) {
+				ut[i].style.backgroundColor="green";
+			}
+		}
+	}
+      window.onload = load;
+</script>
 		
 		<?php
 			
@@ -23,7 +34,7 @@
 					$intents = $camps[1];
 					$min = $camps[2];
 					$sec = $camps[3];
-					echo "<p> USUARI: $user | INTENTS: $intents | MIN: $min | SEC: $sec</p>";
+					echo "<p class='ultimo'> USUARI: $user | INTENTS: $intents | MIN: $min | SEC: $sec</p>";
 				}
 			}
 			fclose($fn);

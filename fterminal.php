@@ -18,7 +18,7 @@
 		<label id="min">00</label><label>:</label><label id="sec">00</label>
 	</div>
 	<?php
-		echo "<label id='user'>".$_SESSION['winInput']."</label>";
+		
 		define ('total_char','408');
 		$special_char = array( '"' , '$' , '%' , '/' , '(' , ')' , '=' , '?' , '|' , '#' , '{' , ']' , '[' , '}');
 		$common_char = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',

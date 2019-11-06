@@ -28,9 +28,14 @@
 
 	<div id="options">
 		<input class="butn" type="submit" name="play" value="Jugar" onclick="window.location.href='./Elegirdificultad.php'">
-		<input class="butn" type="submit" name="seeRanking" value="Ranking" onclick="window.location.href='./ranking.php'">
-		<input class="butn" type="submit" name="seeRanking" value="Ran-Dificil" onclick="window.location.href='./rankingHARD.php'">
-		<input class="butn" type="submit" align='center' name="seeRanking" value="Ran-Extremo" onclick="window.location.href='./rankingExtrem.php'">
+		
+
+		<select name="select">
+		  <option class="butn" type='submit' name="seeRanking" value="Ranking">Rankings</option> 
+		  <option class="butn" type='submit' name="seeRanking" value="Ranking" onclick="window.location.href='./ranking.php'">Normal</option> 
+		  <option class="butn" type='submit' name="seeRanking" value="RanDificil" onclick="window.location.href='./rankingHARD.php'">Dificil</option> 
+		  <option class="butn" type='submit' name="seeRanking" value="RanExtremo" onclick="window.location.href='./rankingExtrem.php'">Extremo</option> 
+		</select>
 	</div>
 	
 </body>
