@@ -22,7 +22,7 @@
 	</script>
 		<?php
 			
-			$fn = fopen("rankingHARD.txt","r");
+			$fn = fopen("rankingHard.txt","r");
   
 			while(! feof($fn))  {
 				$result = fgets($fn);
