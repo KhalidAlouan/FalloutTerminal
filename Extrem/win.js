@@ -5,5 +5,5 @@
 // 	window.location.href = "ranking.php?i1=" + nombre_intents + "&usr=" + user + "&min=" + min + "&sec=" + segons;
 // }
 function home() {
-	window.location.href = "index.php";
+	window.location.href = "../index.php";
 }

@@ -26,7 +26,7 @@
 	<h4>for recording your position at the ranking.</h4>
 	
 	<?php
-		echo "<form method='get' action='index.php'>";
+		echo "<form method='get' action='indexExtrem.php'>";
 		echo "<input id='intentos' name='intentos' value='".$mostrar."' hidden>";
 		echo "<input id='min' name='min' value='".$min."' hidden>";
 		echo "<input id='sec' name='sec' value='".$sec."' hidden>";

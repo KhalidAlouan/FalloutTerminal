@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ranking</title>
-	<link rel="stylesheet" type="text/css" href="ranking.css">
+	<link rel="stylesheet" type="text/css" href="rankingExtrem.css">
 	<script type="text/javascript" src="lose.js"></script>
 </head>
 <body>
@@ -15,15 +15,14 @@
 			for (var i = 0; i < ut.length; i++) {
 				if (i==ut.length-1) {
 				ut[i].style.backgroundColor="green";
+				}
 			}
 		}
-	}
       window.onload = load;
-</script>
-		
+	</script>
 		<?php
 			
-			$fn = fopen("ranking.txt","r");
+			$fn = fopen("rankingExtrem.txt","r");
   
 			while(! feof($fn))  {
 				$result = fgets($fn);

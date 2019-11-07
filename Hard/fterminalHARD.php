@@ -8,13 +8,13 @@
     <title>Terminal</title>
 	<meta charset="utf-8">
 	<style type="text/css" src=""></style>
-	<script type="text/javascript" src="fterminalJS.js"></script>
-    <link rel="stylesheet" type="text/css" href="terminal.css">
+	<script type="text/javascript" src="hardJS.js"></script>
+    <link rel="stylesheet" type="text/css" href="terminalHard.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 </head>
 <body>
-	<div id="marcador" align="center" onclick="easterEgg()">
+	<div id="marcador" align="center">
 		<label id="min">00</label><label>:</label><label id="sec">00</label>
 	</div>
 	<?php
@@ -27,7 +27,7 @@
 	
 		$array= array();
 		// Obrim l'arxiu que conté les paraules.
-		$fp = fopen("paraules.txt", "r");
+		$fp = fopen("paraulesHARD.txt", "r");
 		
 		// Emplenem l'array.
 		while (!feof($fp)){

@@ -14,7 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 </head>
 <body>
-	<div id="marcador" align="center" onclick="easterEgg()">
+	<div id="marcador" align="center">
 		<label id="min">00</label><label>:</label><label id="sec">00</label>
 	</div>
 	<?php
@@ -27,7 +27,7 @@
 	
 		$array= array();
 		// Obrim l'arxiu que conté les paraules.
-		$fp = fopen("paraules.txt", "r");
+		$fp = fopen("paraulesHARD.txt", "r");
 		
 		// Emplenem l'array.
 		while (!feof($fp)){
@@ -41,7 +41,7 @@
 		$choosen_word_array = [];
 		$i = 0;
 		$leng_array = count($array)-1;
-		while ($i<6) {
+		while ($i<12) {
 			$random_index = rand(0,$leng_array);
 			while (in_array($random_index, $array_choosen_word_index)){
 					$random_index = rand(0,$leng_array);
