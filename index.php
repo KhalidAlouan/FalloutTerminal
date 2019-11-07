@@ -22,7 +22,6 @@
 		 }
 
 		 $_SESSION['winInput']=$_GET['nomUsuari'];
-		 echo $_SESSION['winInput'];
 		 
 	?>
 

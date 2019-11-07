@@ -32,12 +32,8 @@
 		echo "<input id='sec' name='sec' value='".$sec."' hidden>";
 		echo "<input id='nomUsuari' name='nomUsuari' type='text' value='".$_SESSION['winInput']."'></input>";
 		
-		echo '<input type="submit" id="btnSend"  name="envia" value="Send!" ;"></input><br/><br/><br/><br/>';
+		echo '<input type="submit" id="btnSend"  name="envia" value="Send!" ;"></input><br/><br/>';
 		echo "</form>";
-
-		
-		
-		
 	?>
 
 	<?php
