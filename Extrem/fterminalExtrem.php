@@ -8,8 +8,8 @@
     <title>Terminal</title>
 	<meta charset="utf-8">
 	<style type="text/css" src=""></style>
-	<script type="text/javascript" src="fterminalJS.js"></script>
-    <link rel="stylesheet" type="text/css" href="terminal.css">
+	<script type="text/javascript" src="extremJS.js"></script>
+    <link rel="stylesheet" type="text/css" href="terminalExtrem.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>  
 </head>
@@ -27,7 +27,7 @@
 	
 		$array= array();
 		// Obrim l'arxiu que conté les paraules.
-		$fp = fopen("paraulesHARD.txt", "r");
+		$fp = fopen("paraulesExtrem.txt", "r");
 		
 		// Emplenem l'array.
 		while (!feof($fp)){
@@ -41,7 +41,7 @@
 		$choosen_word_array = [];
 		$i = 0;
 		$leng_array = count($array)-1;
-		while ($i<6) {
+		while ($i<12) {
 			$random_index = rand(0,$leng_array);
 			while (in_array($random_index, $array_choosen_word_index)){
 					$random_index = rand(0,$leng_array);
@@ -117,7 +117,7 @@
 		//$choosen_word_array[]
 		$inicial_paraules = array();
 		$final_paraules = array();
-		for ($i=0; $i<6; $i++) {
+		for ($i=0; $i<12; $i++) {
 			array_push($inicial_paraules, $choosen_word_array_ordened[$i][0]);
 			array_push($final_paraules, $choosen_word_array_ordened[$i][4]);
 		}
@@ -145,13 +145,13 @@
 							
 
 					
-					if ($num_par < 6) {	
+					if ($num_par < 12) {	
 						$tros3 = substr_replace($tros2, '<span onclick="prova(this); comprovar(this);">'.$choosen_word_array[$num_par], $pos_lletra);
 					}
 
 
 
-					if ($num_par < 6) {	
+					if ($num_par < 12) {	
 						$tros3 = substr_replace($tros2, '<span onmouseover="mostra(this)" onmouseout="esborra(this)" onclick="prova(this); comprovar(this);">'.$choosen_word_array_ordened[$num_par], $pos_lletra);
 
 					}

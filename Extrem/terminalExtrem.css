@@ -1,9 +1,7 @@
 * {
-  font-size: 14.4px;
+  font-size: 13.2px;
   font-family: "Courier New", monospace;
 }
-
-
 
 p {
   display: inline;
@@ -220,7 +218,7 @@ table{
 @keyframes escribir {
     table{overflow: visible;}
     from { width: 0%}
-    to { width:200% }
+    to { width:210% }
 }
 
 

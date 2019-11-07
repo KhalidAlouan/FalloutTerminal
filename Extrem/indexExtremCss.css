@@ -15,13 +15,6 @@ body  {
 	margin-right: 40%;
 	margin-top: 23%;
 
-
-}
-
-h1{
-  color: #39FF14;
-  font-size: 120%;
-  text-shadow: 0 0 24px #39FF14;
 }
 
 input {
@@ -29,7 +22,7 @@ input {
 }
 
 .butn {
-	width: 80%;
+	width: 30%;
   	background: #15c22c;
   	background-image: -webkit-linear-gradient(top, #15c22c, #15c22c);
   	background-image: -moz-linear-gradient(top, #15c22c, #15c22c);
