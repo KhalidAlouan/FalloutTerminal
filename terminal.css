@@ -1,0 +1,392 @@
+* {
+  font-size: 14.4px;
+  font-family: "Courier New", monospace;
+}
+
+
+
+p {
+  display: inline;
+}
+.symbpr {
+  animation: blinker 0.3s infinite;
+  display: inline;
+  height: 1px;
+  font-size:20px;
+  transform: scale(.5, 1);
+}
+
+@keyframes blinker{
+    0%{     color: #088A08;    }
+    49%{    color: black; }
+    50%{    color: black; }
+    99%{    color: black;  }
+    100%{   color: #088A08;    }
+}
+
+h4 { 
+  display:inline; 
+}
+
+#password {
+  display: none;
+}
+
+body {
+	background-image: url("terminal.jpg");
+	background-size:cover;                      
+  background-repeat: no-repeat;
+
+}
+/*
+#divAnimado{
+  position: absolute;
+  height: 80%;
+  width: 50%;
+  padding-top: auto;
+  padding-left: auto;
+  margin:auto;
+  left: 24vw;
+  top: 8vw;
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  opacity: ;
+  background:linear-gradient(-68deg, #808000, #00FF00, #008000, #39FF14);
+  background-size: 500% 500%;
+  animation-iteration-count: 6;
+  animation: gradientBG 3s ease infinite ;
+  animation-delay: 3s;
+}*/
+
+
+/*#efectDos {
+  overflow: hidden;
+  position : absolute;
+  top : 0px;
+  left : 0px;
+  bottom : -10px;
+  right : -10px;
+  padding : 40px;
+  overflow : hidden;
+  z-index : 1;
+  border-radius : 20px;
+  box-shadow : inset 0px 0px 5px 5px rgba(255, 255, 255, .1);
+  opacity : .1;
+}*/
+ 
+
+
+select{
+  
+}
+
+#efectTres:after {
+    content : '';
+    position : absolute;
+    top : 75px;
+    left : 350px;
+    width : 630px;
+    height : 50px;
+
+    background-image: linear-gradient(to bottom,
+    rgba(0, 238, 0, 0),
+    rgba(0, 238, 0, .5));
+    animation: scanning 5s linear infinite; 
+    z-index: 4;
+    transition-delay: initial;
+    left: 26vw;
+    top: 8vw; 
+}
+  
+
+@keyframes scanning {
+    60%, 100% { opacity:0;transform: translate(0, 460px); }
+    0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+
+/*@-webkit-keyframes scan {
+  0%   { top: 0px;}
+  100% { top: 100%;}
+}
+@-moz-keyframes scan {
+  0%   { top: 0px;}
+  100% { top: 100%;}
+}
+@-ms-keyframes scan {
+  0%   { top: 0px;}
+  100% { top: 100%;}
+}*/
+
+
+#box0{
+
+  height: 80%;
+  width: 50%;
+  background-image: url("centre_terminal.png");
+  background-size: contain;                    
+  background-repeat: no-repeat; 
+  position: absolute;
+  padding-top: 1.5%;
+  padding-left: 1%;
+  left: 24vw;
+  top: 8vw;
+  color: #088A08;
+  z-index: 3;
+}
+#box1 {
+ 
+ 	height: 80%;
+ 	width: 50%;
+ 	padding-top: 1.5%;
+ 	padding-left: 1%;
+ 	left: 24vw;
+ 	top: 8vw;
+ 	
+ 
+}
+
+#box2 {
+	background-color: transparent;
+	padding: 9%;
+  width: 178%;
+  
+}
+
+#table1 {	
+	color: #088A08;
+	text-align: left;
+	table-layout: fixed;
+	width: 100%;
+	display: flex;
+  flex-flow: row wrap;
+  white-space: nowrap;
+}
+
+#intents {
+	font-weight: bold;
+}
+
+
+}
+th.column1 {
+	width: 10%;
+	padding-left: 0;
+  text-align: left;
+}
+th.column2 {
+	width: 25%;
+	padding-left: 0%;
+  text-align: left;
+}
+
+th.column4 {
+  width: 25%;
+  padding-left: 5%;
+  text-align: left;
+}
+
+th.column5 {
+  width: 25%;
+  padding-left: 8%;
+  text-align: left;
+}
+
+
+.divString{
+  width: 2%;
+
+}
+.column3 {
+  vertical-align: top;
+  align-content: left;
+  text-align: left;
+  padding-left: 10%;
+  
+  
+}
+table{
+  overflow: hidden;
+  white-space: nowrap;
+  /*margin:0 auto;*/
+  animation: escribir 2s steps(1000) ;
+
+}
+@keyframes escribir {
+    table{overflow: visible;}
+    from { width: 0%}
+    to { width:200% }
+}
+
+
+
+@keyframes blink-caret{
+  from, to{border-color: transparent;}
+  50% {border-color: transparent;}
+}
+
+#titolIntents {
+	width: 40%;
+}
+
+#barraProgres {
+	width: 20%;
+}
+
+#progressbar>div {
+  background-color:  #088A08;
+  width: 25%;
+  height: 15px;
+  border-right: 2px solid black;
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 3%;
+}
+progress::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 3%;
+}
+progress::-webkit-progress-value {
+ -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 3%;
+} 
+progress::-moz-progress-bar {
+ -webkit-appearance: none;
+  appearance: none;
+  color: #088A08;
+  background-color: #088A08;
+  border: 0;
+  border-radius: 0px;
+  width: 0;
+  min-width: 3%;
+}
+
+h4 {
+	padding: 2px;
+	margin: 0px;
+}
+
+span:hover {
+
+	color: black;
+	background-color: #088A08;
+}
+
+
+@media only screen and (max-width: 1280px) {
+
+   *{ 
+      font-size: 1vw; 
+   }
+
+}
+
+#min{
+  padding-left: 45%;
+  color: white;
+}
+
+#sec{ 
+  padding-right: 45%;
+  color:white;
+}
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scroll {
+  0% { height: 0 }
+  100% { height: 100%; }
+}
+
+@keyframes type { 
+  from { width: 0; } 
+} 
+
+@keyframes type2 {
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+
+
+@keyframes scan {
+  from { top: 0 }
+  to { top: 100% }
+}
+
+
+
+
+
+label {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  color: black;
+}
+
+#min {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#sec {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+}
+
+#marcador {
+  position: absolute;
+  top: 6%;
+  left: 45%;
+  height: 4%;
+  width: 6%;
+  text-align: center;
+  background-color: #088A08;
+  border-radius: 25%;
+  font-size: 1.5vw;
+  color: black;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+</style>
